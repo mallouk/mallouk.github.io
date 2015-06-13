@@ -1,1 +1,85 @@
-hellow
+<html>
+	<head>
+		<meta charset='utf-8' />
+		<link href="Style/index.css" rel='stylesheet' />
+		<link href="Style/banner.css" rel='stylesheet' />
+		
+		<script src="Scripts/jquery.min.js"></script>
+		<script>
+			//Loads banner from the banner.html class.
+			$(document).ready(function() {
+				$('#banner').load("banner.html");
+			});
+			
+			var width = $(window).width();
+			$(window).resize(function(){
+				if($(this).width() != width){
+					width = $(this).width();
+					var x = 70;
+					//document.getElementById('menu').style.height = x + "px";
+					
+				}
+			});	
+			
+		</script>
+	</head>
+	
+	<body>
+		<a href="index.html">
+			<div style="height: auto; width: auto">
+				<img  align="middle" src="Images/riverCityDanceBanner.jpg" />
+			</div>
+		</a>
+		
+		<div id="menu">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="upcomingEvents.html">Upcoming Events</a></li>
+				<li><a href="calendar.html">Calendar</a></li>
+				<li><a href="gallery.html">Gallery</a></li>
+				<li><a href="about.html">About Us</a></li>
+				<li><a href="contact.html">Contact Us</a></li>
+			</ul>
+		</div>
+		<br /> <br /> 
+		
+		<div id='divBody'>
+			
+			<div style="display: inline;">
+				<img style="width: 35%; height: 45%; display: inline; padding-right: 1%;" align="left" src="Images/etienne.jpg"/>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin libero justo, maximus ut velit eget, elementum dapibus odio. 
+				Donec magna lorem, elementum in imperdiet ac, sodales a velit. Donec maximus quis nunc pellentesque imperdiet. Sed in luctus orci, 
+				sed fringilla neque. Maecenas at lacus quis ante consequat molestie. Proin venenatis eu neque et viverra. Nullam felis lacus, 
+				laoreet nec nisi vel, accumsan dignissim purus. Proin non viverra dui. Quisque id urna vestibulum, aliquet nisi sit amet, commodo ante. 
+				Nullam bibendum odio metus, ac commodo elit consectetur ac. 	
+				
+			</div>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin libero justo, maximus ut velit eget, elementum dapibus odio. 
+				Donec magna lorem, elementum in imperdiet ac, sodales a velit. Donec maximus quis nunc pellentesque imperdiet. Sed in luctus orci, 
+				sed fringilla neque. Maecenas at lacus quis ante consequat molestie. Proin venenatis eu neque et viverra. Nullam felis lacus, 
+				laoreet nec nisi vel, accumsan dignissim purus. Proin non viverra dui. Quisque id urna vestibulum, aliquet nisi sit amet, commodo ante. 
+				Nullam bibendum odio metus, ac commodo elit consectetur ac. 	
+			</p>
+			
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin libero justo, maximus ut velit eget, elementum dapibus odio. 
+				Donec magna lorem, elementum in imperdiet ac, sodales a velit. Donec maximus quis nunc pellentesque imperdiet. Sed in luctus orci, 
+				sed fringilla neque. Maecenas at lacus quis ante consequat molestie. Proin venenatis eu neque et viverra. Nullam felis lacus, 
+				laoreet nec nisi vel, accumsan dignissim purus. Proin non viverra dui. Quisque id urna vestibulum, aliquet nisi sit amet, commodo ante. 
+				Nullam bibendum odio metus, ac commodo elit consectetur ac. 	
+			</p>
+			
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin libero justo, maximus ut velit eget, elementum dapibus odio. 
+			Donec magna lorem, elementum in imperdiet ac, sodales a velit. Donec maximus quis nunc pellentesque imperdiet. Sed in luctus orci, 
+			sed fringilla neque. Maecenas at lacus quis ante consequat molestie. Proin venenatis eu neque et viverra. Nullam felis lacus, 
+			laoreet nec nisi vel, accumsan dignissim purus. Proin non viverra dui. Quisque id urna vestibulum, aliquet nisi sit amet, commodo ante. 
+			Nullam bibendum odio metus, ac commodo elit consectetur ac. 	
+			</p>
+			</div>
+			
+			
+			<div id="menu">fowe</div>
+			</body>
+			</html>						

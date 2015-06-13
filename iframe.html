@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Event Pane</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<script type="text/javascript" src="Scripts/jquery-1.10.1.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js"></script>
+		
+		
+		<script>
+			
+			function initialize() {
+				var mapCanvas = document.getElementById('map-canvas');
+				var mapOptions = {
+					center: new google.maps.LatLng(44.5403, -78.5463),
+					zoom: 8,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				}
+				var map = new google.maps.Map(mapCanvas, mapOptions);
+			}
+			google.maps.event.addDomListener(window, 'load', initialize);
+			
+			
+			
+			$(document).ready(function(){
+				var data = window.location.href + "";
+				var res = data.split("#"); 
+				
+				var eventTitle = res[1].replace("_", " ");
+				var eventDescription = res[2] + "";
+				var startDate = new Date(parseInt(res[3].replace("_", " ")));
+				var endDate = new Date(parseInt(res[4].replace("_", " ")));
+				
+				for (var i = 0; i < eventDescription.length; i++){
+					eventDescription = eventDescription.replace("_", "<br />");
+					eventDescription = eventDescription.replace("%20", " ");
+				}
+				
+				
+				
+				
+				var startHours = startDate.getHours();
+				var startMin = startDate.getMinutes();
+				if (startHours > 12){
+					startHours-=12;
+					startMin = startMin + " PM";
+					}else if (startHours == 0){
+					startHours = 12;
+					startMin = startMin + "AM";
+					}else{
+					startMin = startMin + "AM";
+				}
+				
+				if (parseInt(startMin) < 10){
+					startMin = "0" + startMin;
+				}
+				
+				
+				var endHours = endDate.getHours();
+				var endMin = endDate.getMinutes();
+				if (endHours > 12){
+					endHours-=12;
+					endMin = endMin + " PM";
+					}else if (endHours == 0){
+					endHours = 12;
+					endMin = endMin + "AM";
+					}else{
+					endMin = endMin + "AM";
+				}
+				
+				if (parseInt(endMin) < 10){
+					endMin = "0" + endMin;
+				}
+				
+				var startMonth = startDate.getUTCMonth() + 1;
+				var startDay = startDate.getUTCDate();
+				var startYear = startDate.getFullYear();
+				
+				var location = res[5] + "";
+				
+				for (var i = 0; i < location.length; i++){
+					location = location.replace("_", " ");
+				}
+				
+				document.getElementById('title').innerHTML = eventTitle;
+				document.getElementById('description').innerHTML = "<b><u>Description:</u></b> " + eventDescription;
+				document.getElementById('date').innerHTML = "<b><u>When:</u></b> " + startMonth + "/" + startDay + "/" + startYear;
+				document.getElementById('location').innerHTML = "<a href=\"http://maps.google.com/maps?q="+location+"\" target=\"_blank\" >" + location + "</a>";
+				
+				document.getElementById('time').innerHTML = "<b><u>Time:</u></b> " + startHours + ":" + startMin + " to " + endHours + ":" + endMin;
+				
+			});
+			
+		</script>
+		
+		
+	</head>
+	<body>
+		<h1 id="title"></h1>
+		
+		<p id="description"></p>
+		
+		<p id="date"></p>
+		
+		<p id="time"></p>
+				
+		<div id="locationDiv">
+			<span style="display: inline;"><b><u>Location:</u></b> </span>
+			<span id="location"></span>
+		</div>
+		<br />
+		<div id="map" style="width: inherit; height: 300px;margin-left: 15px; margin-right: 15px "></div> 
+		
+		<br />
+		<br />
+		
+		<p>
+			<a href="javascript:parent.jQuery.fancybox.close();" style="color: red">close window</a>
+		</p>
+		
+		
+		<script type="text/javascript">
+			
+			var urlRead = window.location.href + "";
+			var parseURL = urlRead.split("#"); 
+			var loc = parseURL[5] + "";
+			for (var i = 0; i < loc.length; i++){
+				loc = loc.replace("_", " ");
+			}
+			
+			var map = new google.maps.Map(document.getElementById('map'), { 
+				mapTypeId: google.maps.MapTypeId.ROADMAP,
+				zoom: 14
+			});
+			
+			var geocoder = new google.maps.Geocoder();
+			
+			geocoder.geocode({
+				'address': loc
+			}, 
+			function(results, status) {
+				if(status == google.maps.GeocoderStatus.OK) {
+					new google.maps.Marker({
+						position: results[0].geometry.location,
+						map: map
+					});
+					map.setCenter(results[0].geometry.location);
+				}
+			});
+			
+		</script> 
+		
+		
+		
+	</body>
+</html>
+
