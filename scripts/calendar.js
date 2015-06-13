@@ -134,7 +134,7 @@ $(document).ready(function() {
 			for (var i = 0; i < location.length; i++){
 				location = location.replace(" ", "_"); 
 			}
-			
+			alert(title + "");
 			var hrefLink = 'iframe.html#' + title + "#" + description + "#" + startDate + "#" + endDate + "#" + location;
 			$.fancybox.open({
 				href : hrefLink,
@@ -145,8 +145,8 @@ $(document).ready(function() {
 	});
 	
 	//This line of code kept crashing the site. It says:
-		//"calEvent not found"
+	//"calEvent not found"
 	//Did you mean to put these in the event listener above?
 	
-	//$('#calendar').fullCalendar('renderEvent', calEvent)
+	$('#calendar').fullCalendar('renderEvent', calEvent)
 });
