@@ -22,16 +22,13 @@
 				}
 				
 				var eventDescription = res[2] + "";
-				var startDate = new Date(parseInt(res[3].replace("_", " ")));
-				var endDate = new Date(parseInt(res[4].replace("_", " ")));
-				
 				for (var i = 0; i < eventDescription.length; i++){
 					eventDescription = eventDescription.replace("_", "<br />");
 					eventDescription = eventDescription.replace("%20", " ");
 				}
 				
-				
-				
+				var startDate = new Date(parseInt(res[3].replace("_", " ")));
+				var endDate = new Date(parseInt(res[4].replace("_", " ")));
 				
 				var startHours = startDate.getHours();
 				var startMin = startDate.getMinutes();
