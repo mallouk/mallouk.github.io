@@ -125,7 +125,7 @@
 					},
 					
 					eventRender: function( event, element, view ) { 
-						if (event.title == "Recurring Event") {
+						if (event.title == "Monday Night Lindy Hop") {
 							//apply your logic here, make changes to element.
 							element.css('background', 'red');
 							element.css('border-color', 'red');
@@ -155,7 +155,10 @@
 						var endDate = calEvent.end + "";
 						
 						var title = calEvent.title;
-						title = title.replace(" ", "_"); 
+						
+						for (var i = 0; i < title.length; i++){
+							title = title.replace(" ", "_"); 
+						}
 						var description = calEvent.description;
 						for (var i = 0; i < description.length; i++){
 							description = description.replace("\n", "_"); 	
@@ -175,43 +178,43 @@
 						
 						
 					}
-				});
+					});
 				
 				$('#calendar').fullCalendar('renderEvent', calEvent)
 				
-				alert("what");
+			alert("what");
 			});
-		</script>
-		<style type="text/css">
+			</script>
+			<style type="text/css">
 			.fancybox-custom .fancybox-skin {
 			box-shadow: 0 0 50px #222;
 			}
 			
 			
-		</style>
-	</head>
-	<body>
-		<a href="index.html">
+			</style>
+			</head>
+			<body>
+			<a href="index.html">
 			<div style="height: auto; width: auto">
-				<img  align="middle" src="Images/riverCityDanceBanner.jpg" />
+			<img  align="middle" src="Images/riverCityDanceBanner.jpg" />
 			</div>
-		</a>
-		
-		<div id="menu">
+			</a>
+			
+			<div id="menu">
 			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="upcomingEvents.html">Upcoming Events</a></li>
-				<li><a href="calendar.html">Calendar</a></li>
-				<li><a href="gallery.html">Gallery</a></li>
-				<li><a href="about.html">About Us</a></li>
-				<li><a href="contact.html">Contact Us</a></li>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="upcomingEvents.html">Upcoming Events</a></li>
+			<li><a href="calendar.html">Calendar</a></li>
+			<li><a href="gallery.html">Gallery</a></li>
+			<li><a href="about.html">About Us</a></li>
+			<li><a href="contact.html">Contact Us</a></li>
 			</ul>
-		</div>
-		<br /> <br />
-		
-		
-		<div id="calendar" style="max-width: 70%; margin: 0 auto;"></div>
-		
-		
-	</body>
-</html>
+			</div>
+			<br /> <br />
+			
+			
+			<div id="calendar" style="max-width: 70%; margin: 0 auto;"></div>
+			
+			
+			</body>
+			</html>																
