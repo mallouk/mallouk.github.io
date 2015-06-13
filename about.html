@@ -2,33 +2,21 @@
 	<head>
 		<title>RCDC - About Us</title>
 		
-		<script src="Scripts/jquery.min.js"></script>
-		<link href="Style/banner.css" rel='stylesheet' />
+		<meta charset="utf-8"/>
+		<meta http-equiv="content-type" content="text/html">
+		<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
 		
+		<script src="scripts/vendor/jquery.min.js" type="text/javascript"></script>
+		<link href="style/index.css" rel="stylesheet" type="text/css"/>
 	</head>
-	
 	<body>
-		<a href="index.html">
-			<div style="height: auto; width: auto">
-				<img  align="middle" src="Images/riverCityDanceBanner.jpg" />
-			</div>
-		</a>
-		
-		<div id="menu">
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="upcomingEvents.html">Upcoming Events</a></li>
-				<li><a href="calendar.html">Calendar</a></li>
-				<li><a href="gallery.html">Gallery</a></li>
-				<li><a href="about.html">About Us</a></li>
-				<li><a href="contact.html">Contact Us</a></li>
-			</ul>
-		</div>
-		<br /> <br /> 
-		
-		
-		<div id='divBody'>
-			<h2>About Us!</h2>
+		<header>
+			<script>
+				$("header").load("banner.html")
+			</script>
+		</header>
+		<div id="body">
+			<h2>About us!</h2>
 		</div>
 	</body>
-</html>						
+</html>
