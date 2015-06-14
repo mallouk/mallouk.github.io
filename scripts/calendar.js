@@ -1,5 +1,3 @@
-console.log("!")
-
 $(document).ready(function() {
 	/*
 		*  Simple image gallery. Uses default settings
