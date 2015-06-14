@@ -33,61 +33,24 @@
 		
 		<script>
 			$(document).ready(function() {
-				/*
-					*  Simple image gallery. Uses default settings
-				*/
-				
 				$('.fancybox').fancybox();
 				
-				/*
-					*  Different effects
-				*/
-				
-				// Disable opening and closing animations, change title type
 				$(".fancybox-effects-b").fancybox({
 					openEffect  : 'fade',
 					closeEffect	: 'fade',
+					modal : true,
 					helpers : {
 						title : {
 							type : 'over'
 						}
 					}
 				});
-				
-				/*
-					*  Open manually
-				*/
-				
-				$("#fancybox-manual-a").click(function() {
-					$.fancybox.open('1_b.jpg');
-				});
-				
+			
 				$("#fancybox-manual-b").click(function() {
 					$.fancybox.open({
 						href : 'iframe.html',
 						type : 'iframe',
 						padding : 5
-					});
-				});
-				
-				$("#fancybox-manual-c").click(function() {
-					$.fancybox.open([
-					{
-						href : '1_b.jpg',
-						title : 'My title'
-						}, {
-						href : '2_b.jpg',
-						title : '2nd title'
-						}, {
-						href : '3_b.jpg'
-					}
-					], {
-						helpers : {
-							thumbs : {
-								width: 75,
-								height: 50
-							}
-						}
 					});
 				});
 				
