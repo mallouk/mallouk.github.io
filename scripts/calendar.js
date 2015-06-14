@@ -58,6 +58,7 @@ $(document).ready(function() {
 	});
 	
 	$('#calendar').fullCalendar({
+		height: 500,
 		defaultDate: new Date(),
 		editable: true,
 		eventLimit: true, // allow "more" link when too many events
@@ -132,7 +133,7 @@ $(document).ready(function() {
 			for (var i = 0; i < location.length; i++){
 				location = location.replace(" ", "_"); 
 			}
-			alert(title + "");
+			
 			var hrefLink = 'iframe.html#' + title + "#" + description + "#" + startDate + "#" + endDate + "#" + location;
 			$.fancybox.open({
 				href : hrefLink,
