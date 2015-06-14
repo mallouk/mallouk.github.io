@@ -28,7 +28,7 @@
 		
 		<link href="Style/index.css" rel="stylesheet" type="text/css"/>
 		<link href="Style/calendar.css" rel="stylesheet" type="text/css"/>
-
+		
 		
 		
 		<script>
@@ -166,7 +166,7 @@
 						for (var i = 0; i < location.length; i++){
 							location = location.replace(" ", "_"); 
 						}
-
+						
 						var hrefLink = 'iframe.html#' + title + "#" + description + "#" + startDate + "#" + endDate + "#" + location;
 						$.fancybox.open({
 							href : hrefLink,
@@ -191,12 +191,10 @@
 	</head>
 	<body>
 		<header>
-			<script>
-				$("header").load("banner.html")
-			</script>
+			
 		</header>
 		<div id="body">
 			<div id="calendar"></div>
-			</div>
-		</body>
-		</html>																		
+		</div>
+	</body>
+</html>																		
