@@ -45,11 +45,7 @@
 					</div>
 					<div id="thumbs" class="navigation">
 						<ul class="thumbs noscript" id="galleryImages">
-							
-							
 						</ul>
-						
-						
 					</div>
 					<div style="clear: both;"></div>
 				</div>
@@ -60,9 +56,8 @@
 			$(function() {
 				var change = function(count) {
 				$("#galleryImages").append( '<li> <a class="thumb" href="Images/gallery/slides/image' + count + '.jpg"> <img src="Images/gallery/thumbs/image' + count + 
-				'.jpg"/> </a> </li>' );
+				'.jpg"/> </a> <div class=\"caption\"> <div class=\"download\"> <a href=\"Images/gallery/originals/image' + count + '.jpg\">View Original</a> </div> </div> </li>' );
 				};
-				
 				for (var x = 1; x < 39; x++){
 					change(x);
 				}
