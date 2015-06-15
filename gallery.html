@@ -56,7 +56,8 @@
 			$(function() {
 				var change = function(count) {
 				$("#galleryImages").append( '<li> <a class="thumb" href="Images/gallery/slides/image' + count + '.jpg"> <img src="Images/gallery/thumbs/image' + count + 
-				'.jpg"/> </a> <div class=\"caption\"> <div class=\"download\"> <a href=\"Images/gallery/originals/image' + count + '.jpg\">View Original</a> </div> </div> </li>' );
+				'.jpg"/> </a> <div class=\"caption\"> <div class=\"download\"> <a target="_blank" href=\"Images/gallery/originals/image' + count + 
+				'.jpg\">View Original</a> </div> </div> </li>' );
 				};
 				for (var x = 1; x < 39; x++){
 					change(x);
@@ -81,11 +82,11 @@
 				
 				// Initialize Advanced Galleriffic Gallery
 				var gallery = $('#thumbs').galleriffic({
-					delay:                     1000,
+					delay:                     1500,
 					numThumbs:                 5,
 					preloadAhead:              10,
 					enableBottomPager:         true,
-					maxPagesToShow:            7,
+					maxPagesToShow:            5,
 					imageContainerSel:         '#slideshow',
 					controlsContainerSel:      '#controls',
 					captionContainerSel:       '#caption',
