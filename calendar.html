@@ -104,11 +104,15 @@
 							style: { classes: 'font-size: 16px;'},
 							position: {
 								my: 'center left',
-								at: 'top center',
+								at: 'center center',
 								
 								target: $(element)
 							}
 						});
+					},
+					
+					eventMouseOver: function(calEvent, jsEvent, view) {
+						
 					},
 					
 					eventClick: function(calEvent, jsEvent, view) {
@@ -160,7 +164,7 @@
 			</script>
 		</header>
 		<div id="body">
-			<div id="calendar" style="height: 10%;"></div>
+			<div id="calendar" style="height: 10%; cursor: pointer;"></div>
 		</div>
 	</body>
 </html>																		
