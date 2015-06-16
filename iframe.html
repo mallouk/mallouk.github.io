@@ -14,11 +14,13 @@
 				var data = window.location.href + "";
 				var res = data.split("#"); 
 				
+				//Obtain eventTitle and replace underscores keys with spaces to re-establish our original string.
 				var eventTitle = res[1];
 				for (var i = 0; i < eventTitle.length; i++){
 					eventTitle = eventTitle.replace("_", " ");
 				}
 				
+				//Obtain description and replace underscores keys with spaces to re-establish our original string.
 				var eventDescription = res[2] + "";
 				for (var i = 0; i < eventDescription.length; i++){
 					eventDescription = eventDescription.replace("_", "<br />");
