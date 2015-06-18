@@ -31,6 +31,7 @@
 				var startDate = new Date(parseInt(res[3].replace("_", " ")));
 				var endDate = new Date(parseInt(res[4].replace("_", " ")));
 				
+				//Format time frames to include AM/PM as well as account for military time.
 				var startHours = startDate.getHours();
 				var startMin = startDate.getMinutes();
 				if (startHours > 12){
@@ -43,11 +44,12 @@
 					startMin = startMin + "AM";
 				}
 				
+				//Add zero in front of minute form in case we're less than 10 min.
 				if (parseInt(startMin) < 10){
 					startMin = "0" + startMin;
 				}
 				
-				
+				//Format time frames to include AM/PM as well as account for military time.
 				var endHours = endDate.getHours();
 				var endMin = endDate.getMinutes();
 				if (endHours > 12){
@@ -60,6 +62,7 @@
 					endMin = endMin + "AM";
 				}
 				
+				//Add zero in front of minute form in case we're less than 10 min.
 				if (parseInt(endMin) < 10){
 					endMin = "0" + endMin;
 				}
