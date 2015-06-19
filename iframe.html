@@ -84,14 +84,31 @@
 				
 				document.getElementById('time').innerHTML = "<b><u>Time:</u></b> " + startHours + ":" + startMin + " to " + endHours + ":" + endMin;
 				
+				
+				if (res.length == 7){
+					window.print();
+					close();
+				}
 			});
+			
+			function printFrame(){
+				var iframeID = window.frameElement.id + "";
+				alert(iframeID + "");
+				var iframeVar = document.getElementById(iframeID);
+				window.frames[iframeVar].focus();				
+			}
+			
+			function test(){
+				//alert(document.URL + "");
+				window.open(document.URL + "#print_version", "_blank");
+			}
 			
 		</script>
 		
 		
 	</head>
 	<body>
-		<span onclick="window.print();" style="color: red; text-align: right; cursor: pointer; float: right;"><u>print window</u></span>
+		<span onclick="test();" style="color: red; text-align: right; cursor: pointer; float: right;"><u>print window</u></span>
 		
 		<h1 id="title"></h1>
 		
@@ -134,21 +151,21 @@
 			
 			geocoder.geocode({
 				'address': loc
-			}, 
-			function(results, status) {
-				if(status == google.maps.GeocoderStatus.OK) {
-					new google.maps.Marker({
-						position: results[0].geometry.location,
-						map: map
-					});
-					map.setCenter(results[0].geometry.location);
-				}
-			});
+				}, 
+				function(results, status) {
+					if(status == google.maps.GeocoderStatus.OK) {
+						new google.maps.Marker({
+							position: results[0].geometry.location,
+							map: map
+						});
+						map.setCenter(results[0].geometry.location);
+					}
+				});
+				
+			</script> 
 			
-		</script> 
-		
-		
-		
-	</body>
-</html>
-
+			
+			
+		</body>
+	</html>
+	
