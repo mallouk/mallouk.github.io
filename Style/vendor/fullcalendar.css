@@ -46,7 +46,7 @@ body .fc { /* extra precedence to overcome jqui */
 }
 
 .fc-unthemed .fc-today {
-	background: white;
+	background: #C9C9C9;
 }
 
 .fc-highlight { /* when user is selecting cells */
@@ -379,7 +379,7 @@ hr.fc-divider {
 .fc td {
 	border-style: solid;
 	border-width: 2px;
-	background-color: #C9C9C9;
+	background-color: white;
 	border-color: black;
 	padding: 0;
 	vertical-align: top;
