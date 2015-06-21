@@ -91,21 +91,7 @@
 				
 				document.getElementById('time').innerHTML = "<b><u>Time:</u></b> " + startHours + ":" + startMin + " to " + endHours + ":" + endMin;
 				
-				
-				$('#cmd').click(function () {
-					var doc = new jsPDF();
-					var source = $('#content').html();
-					var specialElementHandlers = {
-						'#bypassme': function (element, renderer) {
-							return true;
-						}
-					};
-					doc.fromHTML(source, 15, 15, {
-						'width': 75
-					});
-					doc.output("dataurlnewwindow");
-				});
-				
+				document.getElementById('cmd').href = "//pdfcrowd.com/url_to_pdf/?height=-1&pdf_name=test.pdf"
 				
 			});
 			
@@ -116,7 +102,7 @@
 		
 	</head>
 	<body>
-		<a id="cmd" href="#" style="float: right;">generate PDF</a>
+		<a id="cmd" style="float: right;">generate PDF</a>
 		
 		<!-- <span onclick="pdf();" style="color: red; text-align: right; cursor: pointer; float: right;"><u>print window</u></span> -->
 		
