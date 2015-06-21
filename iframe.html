@@ -8,9 +8,40 @@
 		<script type="text/javascript" src="Scripts/vendor/jspdf.standard_fonts_metrics.js"></script> 
 		<script type="text/javascript" src="Scripts/vendor/jspdf.split_text_to_size.js"></script>               
 		<script type="text/javascript" src="Scripts/vendor/jspdf.from_html.js"></script>
-		
-		
 		<script src="https://maps.googleapis.com/maps/api/js"></script>
+		
+		
+		
+		
+	</head>
+	<body>
+		<a id="cmd" style="float: right;">generate PDF</a>
+		
+		<div id="content">
+			<h1 id="title"></h1>
+			
+			<p id="description"></p>
+		</div>
+		<p id="date"></p>
+		
+		<p id="time"></p>
+		
+		<div id="locationDiv">
+			<span style="display: inline;"><b><u>Location:</u></b> </span>
+			<span id="location"></span>
+		</div>
+		<br />
+		<div id="map" style="width: inherit; height: 300px;margin-left: 15px; margin-right: 15px "></div> 
+		
+		
+		<div id="editor"></div>
+		
+		<br />
+		<br />
+		
+		<p>
+			<a href="javascript:parent.jQuery.fancybox.close();" style="color: red">close window</a>
+		</p>
 		
 		
 		<script>
@@ -95,46 +126,6 @@
 				
 			});
 			
-			
-			
-		</script>
-		
-		
-	</head>
-	<body>
-		<a id="cmd" style="float: right;">generate PDF</a>
-		
-		<!-- <span onclick="pdf();" style="color: red; text-align: right; cursor: pointer; float: right;"><u>print window</u></span> -->
-		
-		<div id="content">
-			<h1 id="title"></h1>
-			
-			<p id="description"></p>
-		</div>
-		<p id="date"></p>
-		
-		<p id="time"></p>
-		
-		<div id="locationDiv">
-			<span style="display: inline;"><b><u>Location:</u></b> </span>
-			<span id="location"></span>
-		</div>
-		<br />
-		<div id="map" style="width: inherit; height: 300px;margin-left: 15px; margin-right: 15px "></div> 
-		
-		
-		<div id="editor"></div>
-		
-		<br />
-		<br />
-		
-		<p>
-			<a href="javascript:parent.jQuery.fancybox.close();" style="color: red">close window</a>
-		</p>
-		
-		
-		<script type="text/javascript">
-			
 			var urlRead = window.location.href + "";
 			var parseURL = urlRead.split("#"); 
 			var loc = parseURL[5] + "";
@@ -161,6 +152,7 @@
 					map.setCenter(results[0].geometry.location);
 				}
 			});
+			
 		</script> 
 		
 		
