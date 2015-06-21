@@ -1,21 +1,21 @@
-<!DOCTYPE html>
 <html>
 	<head>
-		<title>Event Pane</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		
 		<script type="text/javascript" src="Scripts/vendor/jquery-1.7.1.min.js"></script>
 		<script type="text/javascript" src="Scripts/vendor/jspdf.js"></script>
 		<script type="text/javascript" src="Scripts/vendor/jspdf.standard_fonts_metrics.js"></script> 
 		<script type="text/javascript" src="Scripts/vendor/jspdf.split_text_to_size.js"></script>               
 		<script type="text/javascript" src="Scripts/vendor/jspdf.from_html.js"></script>
 		
-		
-		<script src="https://maps.googleapis.com/maps/api/js"></script>
-		
-		
 		<script>
-			
 			$(document).ready(function(){
+				
+				
+				
+				
+				
+				
+				
 				//Obtain data passed in from the event.
 				var data = window.location.href + "";
 				var res = data.split("#"); 
@@ -84,7 +84,7 @@
 				}
 				
 				//Place data dynamically within the iframe's varioius divs.
-				document.getElementById('title').innerHTML = eventTitle;
+				document.getElementById('title').innerHTML = "Monday";
 				document.getElementById('description').innerHTML = "<b><u>Description:</u></b> " + eventDescription;
 				document.getElementById('date').innerHTML = "<b><u>When:</u></b> " + startMonth + "/" + startDay + "/" + startYear;
 				document.getElementById('location').innerHTML = "<a href=\"http://maps.google.com/maps?q="+location+"\" target=\"_blank\" >" + location + "</a>";
@@ -92,95 +92,23 @@
 				document.getElementById('time').innerHTML = "<b><u>Time:</u></b> " + startHours + ":" + startMin + " to " + endHours + ":" + endMin;
 				
 				
-				$('#cmd').click(function () {
-					var doc = new jsPDF();
-					var source = $('#content').html();
-					var specialElementHandlers = {
-						'#bypassme': function (element, renderer) {
-							return true;
-						}
-					};
-					doc.fromHTML(source, 15, 15, {
-						'width': 75
-					});
-					doc.output("dataurlnewwindow");
-				});
-				
 				
 			});
-			
-			
-			
 		</script>
-		
-		
 	</head>
+	
+	
 	<body>
-		<a id="cmd" href="#" style="float: right;">generate PDF</a>
+		<a id="cmd" href="#">output iframe to pdf</a>
 		
-		<!-- <span onclick="pdf();" style="color: red; text-align: right; cursor: pointer; float: right;"><u>print window</u></span> -->
-		
-		<div id="content">
+	
+			<p>Hello World </p>
+			
 			<h1 id="title"></h1>
 			
 			<p id="description"></p>
-		</div>
-		<p id="date"></p>
-		
-		<p id="time"></p>
-		
-		<div id="locationDiv">
-			<span style="display: inline;"><b><u>Location:</u></b> </span>
-			<span id="location"></span>
-		</div>
-		<br />
-		<div id="map" style="width: inherit; height: 300px;margin-left: 15px; margin-right: 15px "></div> 
-		
-		
-		<div id="editor"></div>
-		
-		<br />
-		<br />
-		
-		<p>
-			<a href="javascript:parent.jQuery.fancybox.close();" style="color: red">close window</a>
-		</p>
-		
-		
-		<script type="text/javascript">
-			
-			var urlRead = window.location.href + "";
-			var parseURL = urlRead.split("#"); 
-			var loc = parseURL[5] + "";
-			for (var i = 0; i < loc.length; i++){
-				loc = loc.replace("_", " ");
-			}
-			
-			var map = new google.maps.Map(document.getElementById('map'), { 
-				mapTypeId: google.maps.MapTypeId.ROADMAP,
-				zoom: 14
-			});
-			
-			var geocoder = new google.maps.Geocoder();
-			
-			geocoder.geocode({
-				'address': loc
-			}, 
-			function(results, status) {
-				if(status == google.maps.GeocoderStatus.OK) {
-					new google.maps.Marker({
-						position: results[0].geometry.location,
-						map: map
-					});
-					map.setCenter(results[0].geometry.location);
-				}
-			});
-		</script> 
-		
+
 		
 		
 	</body>
-</html>
-
-
-
+</html>	
