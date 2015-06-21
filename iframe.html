@@ -4,18 +4,11 @@
 		<title>Event Pane</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<script type="text/javascript" src="Scripts/vendor/jquery-1.7.1.min.js"></script>
-		<script type="text/javascript" src="Scripts/vendor/jspdf.js"></script>
-		<script type="text/javascript" src="Scripts/vendor/jspdf.standard_fonts_metrics.js"></script> 
-		<script type="text/javascript" src="Scripts/vendor/jspdf.split_text_to_size.js"></script>               
-		<script type="text/javascript" src="Scripts/vendor/jspdf.from_html.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js"></script>
-		
-		
-		
 		
 	</head>
 	<body>
-		<a id="cmd" style="float: right;">generate PDF</a>
+		<a id="cmd" style="float: right;" target="_blank">open in new tab</a>
 		
 		<div id="content">
 			<h1 id="title"></h1>
@@ -45,7 +38,6 @@
 		
 		
 		<script>
-			
 			$(document).ready(function(){
 				//Obtain data passed in from the event.
 				var data = window.location.href + "";
@@ -122,8 +114,7 @@
 				
 				document.getElementById('time').innerHTML = "<b><u>Time:</u></b> " + startHours + ":" + startMin + " to " + endHours + ":" + endMin;
 				
-				document.getElementById('cmd').href = "//pdfcrowd.com/url_to_pdf/?height=-1&pdf_name=test.pdf"
-				
+				document.getElementById('cmd').href = document.URL;
 			});
 			
 			var urlRead = window.location.href + "";
