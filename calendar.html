@@ -88,15 +88,13 @@
 					},
 					
 					eventRender: function( event, element, view ) { 
-						if (event.title == "Monday Night Lindy Hop") {
+						if (event.title == "Monday Night: Lindy Hop Swing Dance") {
 							//apply your logic here, make changes to element.
 							element.css('background', 'red');
 							element.css('border-color', 'red');
-							//element.find('.fc-event-title').append("moo");
-							}else if (event.title == "Event"){
+						}else if (event.title == "Event"){
 							element.css('background', 'blue');
 							element.css('border-color', 'blue');
-							//element.find('.fc-event-title').append("moo");
 						}
 						
 						var tooltipRender = ('<div>'+event.title+'</div>');
