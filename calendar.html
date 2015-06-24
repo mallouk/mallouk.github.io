@@ -40,7 +40,7 @@
 				
 				
 				//Fancybox event to perform when an event in the calendar is clicked.
-				//We will open up a page within the iframe.html link with the associated properities.
+				//We will open up a page within the iframe.html link with the associated properties.
 				$("#fancybox-manual-b").click(function() {
 					$.fancybox.open({
 						href : 'iframe.html',
@@ -50,7 +50,8 @@
 				});
 				
 				
-				//Properities for the calendar.
+				//Properties for the calendar. We'll have a certain, height, if an event is editable, eventlimit per day, if it is selectable, etc.
+				//We pull in our data using google calendars.
 				$('#calendar').fullCalendar({
 					height: 500,
 					defaultDate: new Date(),
@@ -58,37 +59,43 @@
 					eventLimit: true, // allow "more" link when too many events
 					selectable: false,
 					select: false,
+					//Source of calendar data.
 					googleCalendarApiKey: "AIzaSyBrJY4ayDg3Dy9Z8obYvYv2MEF_7sWBT10",
 					events: {
-						// replace this with your own google calendar id.
+						//ID to email used. We're using the RCDC official gmail.
 						googleCalendarId: "rivercitydanceclub@gmail.com"
 					},
 					
+					//Basic header of the calendar info.
 					header: {
 						left: '',
 						center: 'title',
 						right: 'today prev,next'
 					},
 					
+					//Describing the textual bindings of the buttons on the calendar.
 					buttonIcons: {
 						prev: 'left-single-arrow',
 						next: 'right-single-arrow',
 					},
 					
+					//Type of view used within the calendar.
 					views: {
-						month: { // name of view
+						month: { 
 							titleFormat: 'MMMM YYYY',
 							weekMode: '5'
 							// other view-specific options here
 						}
 					},
 					
+					//The color properties applied to the events as they're pulled in. 
+					//We only really use this event call to apply different colors to events
+					//based upon the type of event they are or if they're special.
 					eventRender: function( event, element, view ) { 
 						if (event.title == "Monday Night: Lindy Hop Swing Dance") {
-							//apply your logic here, make changes to element.
 							element.css('background', 'red');
 							element.css('border-color', 'red');
-							}else if (event.title == "Event"){
+						}else if (event.title == "Event"){
 							element.css('background', 'blue');
 							element.css('border-color', 'blue');
 						}
