@@ -38,7 +38,6 @@
 				//Create general fancybox.
 				$('.fancybox').fancybox();
 				
-				
 				//Fancybox event to perform when an event in the calendar is clicked.
 				//We will open up a page within the iframe.html link with the associated properties.
 				$("#fancybox-manual-b").click(function() {
@@ -48,7 +47,6 @@
 						padding : 5
 					});
 				});
-				
 				
 				//Properties for the calendar. We'll have a certain, height, if an event is editable, eventlimit per day, if it is selectable, etc.
 				//We pull in our data using google calendars.
@@ -95,7 +93,7 @@
 						if (event.title == "Monday Night: Lindy Hop Swing Dance") {
 							element.css('background', 'red');
 							element.css('border-color', 'red');
-						}else if (event.title == "Event"){
+							}else if (event.title == "Event"){
 							element.css('background', 'blue');
 							element.css('border-color', 'blue');
 						}
@@ -112,6 +110,7 @@
 							}
 						});
 					},
+					
 					
 					eventClick: function(calEvent, jsEvent, view) {
 						var t = calEvent.title;
@@ -142,18 +141,26 @@
 					}
 				});
 				
+				//This line of code kept crashing the site. It says:
+				//"calEvent not found"
+				//Did you mean to put these in the event listener above?
+				
 				$('#calendar').fullCalendar('renderEvent', calEvent)
 				
 			});
+			
+			
+			
 		</script>
 		
 		
 	</head>
-	<body>		
-		<script>
-			$("header").load("banner.html")
-		</script>
-		
+	<body>
+		<header>
+			<script>
+				$("header").load("banner.html")
+			</script>
+		</header>
 		<div id="body">
 			<div id="calendar" style="height: 10%; cursor: pointer;"></div>
 		</div>
