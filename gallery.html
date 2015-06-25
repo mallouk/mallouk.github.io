@@ -38,7 +38,7 @@
 					<div id="gallery" class="content">
 						<div id="controls" class="controls"></div>
 						<div class="slideshow-container">
-							<div id="loading" class="loader" style="width: 100%; height: 100%"></div>
+							<div id="loading" class="loader"></div>
 							<div id="slideshow" class="slideshow"></div>
 						</div>
 						<div id="caption" class="caption-container"></div>
@@ -57,7 +57,7 @@
 			//Function to dynamically generate the gallery.
 			$(function() {
 				var change = function(count) {
-				$("#galleryImages").append( '<li> <a class="thumb" href="Images/gallery/slides/image (' + count + ').jpg"> <img src="Images/gallery/thumbs/image (' + count + 
+				$("#galleryImages").append( '<li> <a class="thumb" href="Images/gallery/slides/image (' + count + ').jpg"> <img style=\"width: 100%; height: 100%\" src="Images/gallery/thumbs/image (' + count + 
 				').jpg"/> </a> <div class=\"caption\"> <div class=\"download\"> <a target="_blank" href=\"Images/gallery/originals/image (' + count + 
 				').jpg\">View Original</a> </div> </div> </li>' );
 				};
