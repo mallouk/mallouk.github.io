@@ -28,9 +28,27 @@
 	<body>
 		<header>
 			<script>
-				$("header").load("banner.html")
+				//$("header").load("banner.html")
 			</script>
 		</header>
+		
+		<h1>
+			<a href="index.html">
+				<img src="Images/riverCityDanceBanner.jpg" alt="River City Dance Club"/>
+			</a>
+		</h1>
+		<menu>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="calendar.html">Calendar</a></li>
+				<li><a href="upcomingEvents.html">Upcoming Events</a></li>
+				
+				<li><a href="gallery.html">Gallery</a></li>
+				<li><a href="about.html">About Us</a></li>
+				<li><a href="contact.html">Contact Us</a></li>
+			</ul>
+		</menu>
+		
 		<div id="body">			
 			<div id="page">
 				<div id="container">
@@ -53,13 +71,13 @@
 		</div>
 		
 		<script type="text/javascript">
-		
+			
 			//Function to dynamically generate the gallery.
 			$(function() {
 				var change = function(count) {
-				$("#galleryImages").append( '<li> <a class="thumb" href="Images/gallery/slides/image (' + count + ').jpg"> <img src="Images/gallery/thumbs/image (' + count + 
-				').jpg"/> </a> <div class=\"caption\"> <div class=\"download\"> <a target="_blank" href=\"Images/gallery/originals/image (' + count + 
-				').jpg\">View Original</a> </div> </div> </li>' );
+					$("#galleryImages").append( '<li> <a class="thumb" href="Images/gallery/slides/image (' + count + ').jpg"> <img src="Images/gallery/thumbs/image (' + count + 
+					').jpg"/> </a> <div class=\"caption\"> <div class=\"download\"> <a target="_blank" href=\"Images/gallery/originals/image (' + count + 
+					').jpg\">View Original</a> </div> </div> </li>' );
 				};
 				for (var x = 1; x < 39; x++){
 					change(x);
@@ -70,55 +88,56 @@
 			jQuery(document).ready(function($) {
 				// We only want these styles applied when javascript is enabled
 				$('div.navigation').css({'width' : '100px', 'float' : 'left'});
-				$('div.content').css('display', 'block');
-				
-				// Initially set opacity on thumbs and add
-				// additional styling for hover effect on thumbs
-				var onMouseOutOpacity = 0.67;
-				$('#thumbs ul.thumbs li').opacityrollover({
-					mouseOutOpacity:   onMouseOutOpacity,
-					mouseOverOpacity:  1.0,
-					fadeSpeed:         'fast',
-					exemptionSelector: '.selected'
-				});
-				
-				// Initialize Advanced Galleriffic Gallery
-				var gallery = $('#thumbs').galleriffic({
-					delay:                     1500,
-					numThumbs:                 5,
-					preloadAhead:              10,
-					enableBottomPager:         true,
-					maxPagesToShow:            6,
-					imageContainerSel:         '#slideshow',
-					controlsContainerSel:      '#controls',
-					captionContainerSel:       '#caption',
-					loadingContainerSel:       '#loading',
-					renderSSControls:          true,
-					renderNavControls:         true,
-					playLinkText:              'Play Slideshow',
-					pauseLinkText:             'Pause Slideshow',
-					prevLinkText:              '&lsaquo; Previous Photo',
-					nextLinkText:              'Next Photo &rsaquo;',
-					nextPageLinkText:          'Next &rsaquo;',
-					prevPageLinkText:          '&lsaquo; Prev',
-					enableHistory:             false,
-					autoStart:                 false,
-					syncTransitions:           true,
-					defaultTransitionDuration: 900,
-					onSlideChange:             function(prevIndex, nextIndex) {
-						// 'this' refers to the gallery, which is an extension of $('#thumbs')
-						this.find('ul.thumbs').children()
-						.eq(prevIndex).fadeTo('fast', onMouseOutOpacity).end()
-						.eq(nextIndex).fadeTo('fast', 1.0);
-					},
-					onPageTransitionOut:       function(callback) {
-						this.fadeTo('fast', 0.0, callback);
-					},
-					onPageTransitionIn:        function() {
-						this.fadeTo('fast', 1.0);
-					}
-				});
+			$('div.content').css('display', 'block');
+			
+			// Initially set opacity on thumbs and add
+			// additional styling for hover effect on thumbs
+			var onMouseOutOpacity = 0.67;
+			$('#thumbs ul.thumbs li').opacityrollover({
+			mouseOutOpacity:   onMouseOutOpacity,
+			mouseOverOpacity:  1.0,
+			fadeSpeed:         'fast',
+			exemptionSelector: '.selected'
 			});
-		</script>
-	</body>
-</html>
+			
+			// Initialize Advanced Galleriffic Gallery
+			var gallery = $('#thumbs').galleriffic({
+			delay:                     1500,
+			numThumbs:                 5,
+			preloadAhead:              10,
+			enableBottomPager:         true,
+			maxPagesToShow:            6,
+			imageContainerSel:         '#slideshow',
+			controlsContainerSel:      '#controls',
+			captionContainerSel:       '#caption',
+			loadingContainerSel:       '#loading',
+			renderSSControls:          true,
+			renderNavControls:         true,
+			playLinkText:              'Play Slideshow',
+			pauseLinkText:             'Pause Slideshow',
+			prevLinkText:              '&lsaquo; Previous Photo',
+			nextLinkText:              'Next Photo &rsaquo;',
+			nextPageLinkText:          'Next &rsaquo;',
+			prevPageLinkText:          '&lsaquo; Prev',
+			enableHistory:             false,
+			autoStart:                 false,
+			syncTransitions:           true,
+			defaultTransitionDuration: 900,
+			onSlideChange:             function(prevIndex, nextIndex) {
+			// 'this' refers to the gallery, which is an extension of $('#thumbs')
+			this.find('ul.thumbs').children()
+			.eq(prevIndex).fadeTo('fast', onMouseOutOpacity).end()
+			.eq(nextIndex).fadeTo('fast', 1.0);
+			},
+			onPageTransitionOut:       function(callback) {
+			this.fadeTo('fast', 0.0, callback);
+			},
+			onPageTransitionIn:        function() {
+			this.fadeTo('fast', 1.0);
+			}
+			});
+			});
+			</script>
+			</body>
+			</html>
+						
