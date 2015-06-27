@@ -1,6 +1,6 @@
 @font-face{
     font-family: "Cagliostro-Regular";
-    src: url('/fonts/Cagliostro-Regular.ttf')
+    src: url('./fonts/Cagliostro-Regular.ttf')
 }
 
 * {
