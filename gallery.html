@@ -2,14 +2,15 @@
 	<head>
 		<title>River City Dance Club - Gallery</title>
 		
+		<!--Meta Tags to define charsets-->
 		<meta charset="utf-8"/>
 		<meta http-equiv="content-type" content="text/html">
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 		
+		<!--Imports defined here-->
 		<link rel="stylesheet" href="Style/vendor/basic.css" type="text/css" />
 		<link rel="stylesheet" href="Style/vendor/galleriffic-2.css" type="text/css" />
 		<link rel="stylesheet" href="Style/index.css" type="text/css" />
-		
 		<script type="text/javascript" src="Scripts/vendor/jquery-1.3.2.js"></script>
 		<script type="text/javascript" src="Scripts/vendor/jquery.galleriffic.js"></script>
 		<script type="text/javascript" src="Scripts/vendor/jquery.opacityrollover.js"></script>
@@ -21,6 +22,7 @@
 	
 	
 	<body>
+	<!--Define banner and main top bar-->
 		<h1>
 			<a href="index.html">
 				<img src="Images/riverCityDanceBanner.jpg" alt="River City Dance Club"/>
@@ -38,6 +40,7 @@
 			</ul>
 		</menu>
 		
+		<!--Define basic gallery structure-->
 		<div id="body">			
 			<div id="page">
 				<div id="container">
@@ -68,6 +71,9 @@
 					').jpg"/> </a> <div class=\"caption\"> <div class=\"download\"> <a target="_blank" href=\"Images/gallery/originals/image (' + count + 
 					').jpg\">View Original</a> </div> </div> </li>' );
 				};
+				
+				//Loop that will place the gallery images dynamically into the div on the HTML page. We need to change the second number to accomate more pictures within the 
+				//various path directories, namely: /slides, /thumbs, and /originals
 				for (var x = 1; x < 39; x++){
 					change(x);
 				}
@@ -89,7 +95,7 @@
 					exemptionSelector: '.selected'
 				});
 				
-				// Initialize Advanced Galleriffic Gallery
+				// Initialize Advanced Galleriffic Gallery, these are the inital main properties applied to the system.
 				var gallery = $('#thumbs').galleriffic({
 					delay:                     1500,
 					numThumbs:                 5,
