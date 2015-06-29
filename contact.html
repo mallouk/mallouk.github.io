@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>River City Dance Club - Contact Us</title>
+		<title>River City Dance Club - Home</title>
 		
 		<meta charset="utf-8"/>
-		<meta http-equiv="content-type" content="text/html">
-		<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
+        <meta http-equiv="content-type" content="text/html">
+        <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
 		
 		<script src="Scripts/vendor/jquery.min.js" type="text/javascript"></script>
 		<link href="Style/index.css" rel="stylesheet" type="text/css"/>
-		
-		<script src="jquery.event.swipe.js" type="text/javascript"></script>
-		<script src="unslider.js" type="text/javascript"></script>
-		
 	</head>
 	<body>
-		
 		<h1>
 			<a href="index.html">
 				<img src="Images/riverCityDanceBanner.jpg" alt="River City Dance Club"/>
@@ -33,11 +28,9 @@
 			</ul>
 		</menu>
 		
-		
 		<div id="body">
 			<h2>Contact Us!</h2>
 		</div>
-		
 		
 		<div id="body">
 			<img class="photo" src="Images/etienne.jpg"/>
@@ -70,33 +63,5 @@
 				Nullam bibendum odio metus, ac commodo elit consectetur ac. 	
 			</p>
 		</div>
-		
-		
-		<a href="#" class="unslider-arrow prev">Previous slide</a>
-		<a href="#" class="unslider-arrow next">Next slide</a>
-		<div class="banner" style="width: 545px;">
-			<ul style="float: center;">
-				<li> <img src="Images/gallery/slides/image (1).jpg"></li>
-				<li> <img src="Images/gallery/slides/image (2).jpg"></li>
-				<li> <img src="Images/gallery/slides/image (3).jpg"></li>
-			</ul>
-		</div>
-		
 	</body>
-	
-	
-	<script>
-		$(function() {
-			$('.banner').unslider();
-		});
-		
-		var unslider = $('.banner').unslider();
-		
-		$('.unslider-arrow').click(function() {
-			var fn = this.className.split(' ')[1];
-			
-			//  Either do unslider.data('unslider').next() or .prev() depending on the className
-			unslider.data('unslider')[fn]();
-		});
-	</script>
-</html>
+</html>															
