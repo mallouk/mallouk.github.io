@@ -82,7 +82,7 @@ var $JssorSlideshowFormations$ = window.$JssorSlideshowFormations$ = new functio
     function isToBottom(roadValue) {
         return (roadValue & TO_BOTTOM) == TO_BOTTOM;
     }
-
+	
     function PushFormationOrder(arr, order, formationItem) {
         formationItem.push(order);
         arr[order] = arr[order] || [];
