@@ -47,15 +47,20 @@
 		<div id="body">			
 			<div id="page">
 				<div id="container">
-					<!-- Start Advanced Gallery Html Containers -->
+					<!-- Render main gallery structure-->
 					<div id="gallery" class="content">
 						<div id="controls" class="controls"></div>
+						
+						<!--Slide show data if the slider is turned on.-->
 						<div class="slideshow-container">
 							<div id="loading" class="loader"></div>
 							<div id="slideshow" class="slideshow"></div>
 						</div>
+						
+						<!--Create viewable scale image.-->
 						<div id="caption" class="caption-container"></div>
 					</div>
+					<!-- Create thumbnail images-->
 					<div id="thumbs" class="navigation">
 						<ul class="thumbs noscript" id="galleryImages">
 						</ul>
@@ -98,7 +103,7 @@
 					exemptionSelector: '.selected'
 				});
 				
-				// Initialize Advanced Galleriffic Gallery, these are the inital main properties applied to the system.
+				// Initialize Advanced Galleriffic Gallery, these are the initial main properties applied to the system.
 				var gallery = $('#thumbs').galleriffic({
 					delay:                     1500,
 					numThumbs:                 5,

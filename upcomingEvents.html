@@ -29,8 +29,8 @@
 				
 				
 				//Fancybox event to perform when an event in the calendar is clicked.
-				//We will open up a page within the iframe.html link with the associated properties.
-				$("#fancybox-manual-b").click(function() {
+				//Opens up a coming soon html to let the user know to return later for more info.
+				$(".comingSoonFancyBox").click(function() {
 					$.fancybox.open({
 						href : 'comingSoon.html',
 						type : 'iframe',
@@ -38,26 +38,15 @@
 					});
 				});
 				
-				$("#fancybox-manual-a").click(function() {
+				//Fancybox that opens up actual event data for an event.
+				$(".eventDataFancyBox").click(function() {
 					$.fancybox.open({
-						href : 'comingSoon.html',
+						href : 'iframe.html',
 						type : 'iframe',
 						padding : 5
 					});
 				});
-				
-				$("#fancybox-manual-c").click(function() {
-					$.fancybox.open({
-						href : 'comingSoon.html',
-						type : 'iframe',
-						padding : 5
-					});
-				});
-				
-				
-				
 			});
-			
 		</script>
 		
 		
@@ -90,18 +79,18 @@
 			<br /> <br />
 			<hr align="center">
 			<br /> <br />
-			<a id="fancybox-manual-a" href="javascript:;"><img style="width: 100%; box-shadow: 10px 10px 5px #888888;" src="Images/chatta-atta.jpg"></img></a>
+			<a class="comingSoonFancyBox" href="javascript:;"><img style="width: 100%; box-shadow: 10px 10px 5px #888888;" src="Images/chatta-atta.jpg"></img></a>
 			
 			<br /> <br /> <br />
 			<hr align="center" />
 			<br /> <br />
-			<a id="fancybox-manual-b" href="javascript:;"><img style="width: 100%; box-shadow: 10px 10px 5px #888888;" src="Images/chatta-atta.jpg"></img></a>
+			<a class="comingSoonFancyBox" href="javascript:;"><img style="width: 100%; box-shadow: 10px 10px 5px #888888;" src="Images/chatta-atta.jpg"></img></a>
 			
 			<br /> <br />
 			<br />
 			<hr align="center" />
 			<br /> <br />
-			<a id="fancybox-manual-c" href="javascript:;"><img style="width: 100%; box-shadow: 10px 10px 5px #888888;" src="Images/chatta-atta.jpg"></img></a>
+			<a class="comingSoonFancyBox" href="javascript:;"><img style="width: 100%; box-shadow: 10px 10px 5px #888888;" src="Images/chatta-atta.jpg"></img></a>
 		</div>
 	</body>
 </html>
