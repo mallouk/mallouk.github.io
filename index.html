@@ -86,10 +86,11 @@
 				}
 				ScaleSlider();
 				
+				//Load the slider and scale it. 
 				$(window).bind("load", ScaleSlider);
 				$(window).bind("resize", ScaleSlider);
 				$(window).bind("orientationchange", ScaleSlider);
-				//responsive code end
+				
 			});
 		</script>
 		
@@ -118,6 +119,7 @@
 		</div>
 		<br />
 		
+		<!--Render the slider on the screen.-->
 		<div align="center" style="float: center;">
 			<div id="slider1_container" style="position: relative; width: 600px; height: 300px; overflow: hidden; float: center;">
 				<!-- Loading Screen -->
@@ -141,7 +143,7 @@
 						</div>
 					</div>
 					
-					<!-- bullet navigator container -->
+					<!-- Bullet navigator container -->
 					<div u="navigator" class="jssorb05" style="bottom: 16px; right: 6px;">
 						<!-- bullet navigator item prototype -->
 						<div u="prototype"></div>
@@ -155,7 +157,7 @@
 			</div>
 		</div>
 		
-		
+		<!--Render the text on the screen.-->
 		<div id="body">
 			<img class="photo" src="Images/etienne.jpg"/>
 			<p>
