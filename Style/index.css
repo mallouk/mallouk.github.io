@@ -65,9 +65,13 @@ hr {
 	margin-bottom: 1em;
 }
 
-
-
 .banner { position: relative; overflow: auto; }
 .banner li { list-style: none; }
 .banner ul li { float: left; }
+
+.imgShadows{
+	-webkit-box-shadow: 0px 6px 11px 4px rgba(148,142,148,1);
+	-moz-box-shadow: 0px 6px 11px 4px rgba(148,142,148,1);
+	box-shadow: 0px 6px 11px 4px rgba(148,142,148,1);	
+}
 
