@@ -79,17 +79,21 @@
 				//you can remove responsive code if you don't want the slider scales while window resizes
 				function ScaleSlider() {
 					var parentWidth = jssor_slider1.$Elmt.parentNode.clientWidth;
-					if (parentWidth)
-                    jssor_slider1.$ScaleWidth(Math.min(parentWidth, 800));
-					else
-                    window.setTimeout(ScaleSlider, 30);
+					var parentHeight = jssor_slider1.$Elmt.parentNode.clientHeight;
+					if (parentWidth){
+						jssor_slider1.$ScaleWidth(Math.min(parentWidth, 800));
+						jssor_slider1.$ScaleHeight(Math.min(parentHeight, 450));
+					}
+					else{
+						window.setTimeout(ScaleSlider, 30);
+					}
 				}
 				ScaleSlider();
 				
 				//Load the slider and scale it. 
-				$(window).bind("load", ScaleSlider);
-				$(window).bind("resize", ScaleSlider);
-				$(window).bind("orientationchange", ScaleSlider);
+				//$(window).bind("load", ScaleSlider);
+				//$(window).bind("resize", ScaleSlider);
+				//$(window).bind("orientationchange", ScaleSlider);
 			});
 		</script>
 		
@@ -101,8 +105,8 @@
 		<div id="banner">
 			<h1>
 				<a href="index.html">
-					<img src="Images/riverCityDanceBanner.jpg" alt="River City Dance Club"/>
-				</a>
+				<img src="Images/riverCityDanceBanner.jpg" alt="River City Dance Club"/>
+			</a>
 			</h1>
 			<menu>
 				<ul>
@@ -120,7 +124,7 @@
 		
 		<!--Render the slider on the screen.-->
 		<div class="imgShadows" align="center" style="float: center;">
-			<div id="slider1_container" style="position: relative; width: 800px; height: 450px; overflow: hidden; float: center;">
+			<div id="slider1_container" style="position: relative; width: 1000px; height: 450px; overflow: hidden; float: center;">
 				<!-- Loading Screen -->
 				<div u="loading" style="top: 0px; left: 0px;">
 					<div style="filter: alpha(opacity=70); opacity:0.7; display: block; background-color: #000000; top: 0px; left: 0px; width: 100%; height: 100%;">
@@ -131,10 +135,11 @@
 				
 				<!-- Slides Container -->
 				<div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1000px; height: 450px; overflow: hidden;">
-					<div>
-						<img u="image" src="Images/slider1.jpg" />
+					<div style="width: 600px; height: 450px;" >
+						<img u="image" src="Images/slider2.jpg" />
 					</div>
 					
+					<!--
 					<div>
 						<a href="#"><img class="imgShadows" u="image" src="Images/red.jpg" /></a>
 					</div>
@@ -144,6 +149,7 @@
 					<div>
 						<img u="image" src="Images/purple.jpg" />
 					</div>
+					-->
 				</div>
 				
 				<!-- Bullet navigator container -->
