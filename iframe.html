@@ -125,6 +125,12 @@
 				document.getElementById('location').innerHTML = "<a href=\"http://maps.google.com/maps?q="+location+"\" target=\"_blank\" >" + location + "</a>";
 				document.getElementById('time').innerHTML = "<b><u>Time:</u></b> " + startHours + ":" + startMin + " to " + endHours + ":" + endMin;
 				document.getElementById('cmd').href = document.URL;
+				
+				//Block of code used for upcoming events. It's used so that a general date will be passed for "When" rather than a specific event date. 
+				//This is primarily useful only for recurring Monday night dances.
+				if (res.length == 7){
+					document.getElementById('date').innerHTML = "<b><u>When:</u></b> Every single Monday."
+				}
 			});
 			
 			//Get location from URL and parse it.
