@@ -75,19 +75,7 @@
 				
 				//responsive code begin
 				//you can remove responsive code if you don't want the slider scales while window resizes
-				function ScaleSlider() {
-					var parentWidth = 800
-					if (parentWidth)
-                    jssor_slider1.$ScaleWidth(Math.min(parentWidth, 800));
-					else
-                    window.setTimeout(ScaleSlider, 30);
-				}
-				ScaleSlider();
 				
-				$(window).bind("load", ScaleSlider);
-				$(window).bind("resize", ScaleSlider);
-				$(window).bind("orientationchange", ScaleSlider);
-				//responsive code end
 			});
 		</script>
 		
@@ -117,7 +105,7 @@
 		<br /><br />
 		
 		<!--Render the slider on the screen.-->
-		<div align="center">
+		<div align="center" style="width: 100%">
 			<div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 600px; height: 300px; overflow: hidden; float: middle; ">
 				
 				<!-- Loading Screen -->
@@ -136,7 +124,13 @@
 						<div>
 							<img u="image" src="Images/slider2.jpg" />
 						</div>
+						
+						<div>
+							<img u="image" src="Images/slider2.jpg" />
+						</div>
 					</div>
+					
+					
 				</div>
 				<div u="navigator" class="jssorb05" style="bottom: 16px; right: 6px;">
 					<div u="prototype"></div>
