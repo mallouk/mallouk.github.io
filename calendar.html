@@ -19,7 +19,6 @@
 		<script src="Scripts/vendor/jquery-ui.js" type="text/javascript"></script>
 		<script src="Scripts/vendor/fullcalendar.js" type="text/javascript"></script>
 		<script src="Scripts/vendor/gcal.js" type="text/javascript"></script>
-		<script src="Scripts/vendor/jquery-qtip.js" type="text/javascript"></script>
 		
 		<link href="Style/vendor/jquery.fancybox-thumbs.css?v=1.0.7" rel="stylesheet" type="text/css"/>
 		<link href="Style/vendor/jquery.fancybox-buttons.css?v=1.0.5" rel="stylesheet" type="text/css"/>
@@ -27,7 +26,6 @@
 		<link href="Style/vendor/jquery-ui.css" rel="stylesheet" type="text/css"/>
 		<link href="Style/vendor/fullcalendar.css" rel="stylesheet" type="text/css"/>
 		<link href="Style/vendor/fullcalendar.print.css" rel="stylesheet" media="print" type="text/css"/>
-		<link href="Style/vendor/jquery-qtip.css" rel="stylesheet" type="text/css"/>
 		
 		<link href="Style/index.css" rel="stylesheet" type="text/css"/>
 		<link href="Style/calendar.css" rel="stylesheet" type="text/css"/>
@@ -92,24 +90,12 @@
 					//based upon the type of event they are or if they're special.
 					eventRender: function( event, element, view ) { 
 						if (event.title == "Monday Night: Lindy Hop Swing Dance") {
-							element.css('background', 'red');
-							element.css('border-color', 'red');
+							element.css('background', 'purple');
+							element.css('border-color', 'purple');
 							}else if (event.title == "Event"){
 							element.css('background', 'blue');
 							element.css('border-color', 'blue');
 						}
-						
-						var tooltipRender = ('<div>'+event.title+'</div>');
-						element.qtip({
-							content: tooltipRender,
-							style: { classes: 'font-size: 16px;'},
-							position: {
-								my: 'center left',
-								at: 'center center',
-								
-								target: $(element)
-							}
-						});
 					},
 					
 					//Event to occur when an event is clicked.
