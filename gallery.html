@@ -72,23 +72,49 @@
 		
 		<script type="text/javascript">
 			
+			
+			
 			//Function to dynamically generate the gallery.
 			$(function() {
-				var change = function(count) {
+				var change = function(count, desc) {
 					$("#galleryImages").append( '<li> <a class="thumb" href="Images/gallery/slides/image (' + count + ').jpg"> <img src="Images/gallery/thumbs/image (' + count + 
 					').jpg"/> </a> <div class=\"caption\"> <div class=\"download\"> <a target="_blank" href=\"Images/gallery/originals/image (' + count + 
-					').jpg\">View Original</a> </div> </div> </li>' );
+					').jpg\">View Original</a> </div> <div style=\"float: left;\" class="image-desc">Description #' + desc + '</div> </div> </li>' );
 				};
 				
-				//Loop that will place the gallery images dynamically into the div on the HTML page. We need to change the second number to accomate more pictures within the 
+				
+				//Loop that will place the gallery images dynamically into the div on the HTML page. We need to change the second number to accommodate more pictures within the 
 				//various path directories, namely: /slides, /thumbs, and /originals
-				for (var x = 1; x < 39; x++){
-					change(x);
+				var file = "Images/ImageDescriptions.txt";
+				var rawFile = new XMLHttpRequest();
+				rawFile.open("GET", file, false);
+				rawFile.onreadystatechange = function ()
+				{
+					if(rawFile.readyState === 4)
+					{
+						if(rawFile.status === 200 || rawFile.status == 0)
+						{
+							var allText = rawFile.responseText;
+							lineDescriptions = allText.split("\n");
+							
+							for (var t = 0; t < lineDescriptions.length; t++){
+								var meh = lineDescriptions[t].split(")-");
+								lineDescriptions[t] = meh[1];
+							}
+							
+							for (var x = 1; x < lineDescriptions.length; x++){
+								change(x, lineDescriptions[x-1]);
+							}
+						}
+					}
 				}
+				rawFile.send(null);
 			});
 			
-			
 			jQuery(document).ready(function($) {
+				
+				//readTextFile("Images/ImageDescriptions.txt");
+				
 				// We only want these styles applied when javascript is enabled
 				$('div.navigation').css({'width' : '100px', 'float' : 'left'});
 				$('div.content').css('display', 'block');
