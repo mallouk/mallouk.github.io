@@ -16,7 +16,12 @@
 		<link href="Style/slider.css" rel="stylesheet" type="text/css"/>
 		
 		
-		<script>
+		<script type="text/javascript">
+		
+			if (screen.width <= 699){
+				document.location = "mobile.html";
+			}
+		
 			jQuery(document).ready(function ($) {
 				
 				var _SlideshowTransitions = [
