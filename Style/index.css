@@ -52,6 +52,10 @@ p {
 	font-family: Cagliostro-Regular;
 }
 
+body{
+	overflow-y: scroll;
+}
+
 hr {
 	margin-left: 30px;
 	margin-right: 30px;
