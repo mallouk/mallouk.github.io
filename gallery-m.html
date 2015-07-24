@@ -125,64 +125,7 @@
 			
 			<!-- Slides Container -->
 			<div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 800px; height: 356px; overflow: hidden;">
-				<div>
-					<img u="image" style="width: 100%;" src="Images/gallery/slides/image (1).jpg" />
-					<img u="thumb" src="Images/gallery/thumbs/image (1).jpg" />
-				</div>
-				
-				<div>
-					<img u="image" style="width: 100%;" src="Images/gallery/slides/image (2).jpg" />
-					<img u="thumb" src="Images/gallery/thumbs/image (2).jpg" />
-				</div>
-				
-				<div>
-					<img u="image" style="width: 100%;" src="Images/gallery/slides/image (3).jpg" />
-					<img u="thumb" src="Images/gallery/thumbs/image (3).jpg" />
-				</div>
-				
-				<div>
-					<img u="image" style="width: 100%;" src="Images/gallery/slides/image (4).jpg" />
-					<img u="thumb" src="Images/gallery/thumbs/image (4).jpg" />
-				</div>
-				
-				<div>
-					<img u="image" src="Images/gallery/slides/image (5).jpg" />
-					<img u="thumb" src="Images/gallery/thumbs/image (5).jpg" />
-				</div>
-				
-				<div>
-					<img u="image" src="Images/gallery/slides/image (6).jpg" />
-					<img u="thumb" src="Images/gallery/thumbs/image (6).jpg" />
-				</div>
-				
-				<div>
-					<img u="image" src="Images/gallery/slides/image (7).jpg" />
-					<img u="thumb" src="Images/gallery/thumbs/image (7).jpg" />
-				</div>
-				
-				<div>
-					<img u="image" src="Images/gallery/slides/image (8).jpg" />
-					<img u="thumb" src="Images/gallery/thumbs/image (8).jpg" />
-				</div>
-				
-				<div>
-					<img u="image" src="Images/gallery/slides/image (9).jpg" />
-					<img u="thumb" src="Images/gallery/thumbs/image (9).jpg" />
-				</div>
-				
-				<div>
-					<img u="image" src="Images/gallery/slides/image (10).jpg" />
-					<img u="thumb" src="Images/gallery/thumbs/image (10).jpg" />
-				</div>
-				
-				<div>
-					<img u="image" src="Images/gallery/slides/image (11).jpg" />
-					<img u="thumb" src="Images/gallery/thumbs/image (11).jpg" />
-				</div>
-				
-				<div>
-					<img u="image" src="Images/gallery/slides/image (12).jpg" />
-					<img u="thumb" src="Images/gallery/thumbs/image (12).jpg" />
+				<div id="galleryImages">
 				</div>
 			</div>
 			
@@ -327,12 +270,19 @@
 		</div>
 		
 		
-		
-		
-		
 		<div id="body">
-			<p>This page is currently under construction.</p>
 			<p align="center"><a href="gallery.html">View the desktop site</a> </p>
 		</div>
+		
+		<script type="text/javascript">
+			$(document).ready(function() {
+				for (var x = 1; x < 39; x++){
+					$("#galleryImages").append('<div> <img u="image" src="Images/gallery/slides/image (' + x + 
+					').jpg"/> <img u="thumb" src="Images/gallery/thumbs/image (' + x + ').jpg"</div>');
+				}
+			});
+			
+		</script>
+		
 	</body>
 </html>
