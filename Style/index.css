@@ -87,6 +87,7 @@ hr {
 	background-color: #8BC3D6;
 	font-family: Times New Roman, sans-serif;
 	color: white;
+	float: center;
 }
 
 #footer li {
