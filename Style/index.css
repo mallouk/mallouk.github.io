@@ -83,10 +83,13 @@ hr {
 	display: block;
 	font-size: 15px;
 	background-color: #8BC3D6;
-	font-family: Cagliostro-Regular, sans-serif;
+	font-family: Times New Roman;
 	padding: 1.5em;
 	margin-left: 11%;
 	margin-right: 11%;
 	color: white;
 }
 
+#footer  a {
+	font-family: Times New Roman;
+}
