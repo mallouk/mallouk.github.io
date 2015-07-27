@@ -79,33 +79,50 @@ hr {
 	box-shadow: 0px 6px 11px 4px rgba(148,142,148,1);	
 }
 
+
 #footer {
 	display: block;
 	font-size: 15px;
 	text-align: center;
 	background-color: #8BC3D6;
+	font-family: Times New Roman, sans-serif;
+	color: white;
+}
+
+#footer li {
+	padding: 1.5em;
+	display: inline-block;
+}
+
+#footer a {
+	color: inherit;
+	text-decoration: none;
+}
+
+
+
+
+#footerMobile {
+	display: block;
+	font-size: 15px;
+	text-align: center;
+	background-color: #8BC3D6;
 	
-	font-family: Times New Roman;
+	font-family: Times New Roman,sans-serif;;
 	padding: 1.5em;
 	margin-left: 3%;
 	margin-right: 3%;
 	color: white;
 }
 
-#footer #text{
-	float: left;
-	font-family: Times New Roman;	
-}
-
-
-#footer li {
+#footerMobile li {
 	display: inline-block;
 	width: 150px;
 }
 
-#footer a  span{
+#footerMobile a  span{
 	color: inherit;
 	text-decoration: none;
-	font-family: Times New Roman;
+	font-family: Times New Roman,sans-serif;;
 	
 }
