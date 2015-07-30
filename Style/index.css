@@ -1,12 +1,12 @@
 @font-face{
-    font-family: "PrestigeEliteStd";
-    src: url('./fonts/PrestigeEliteStd.otf')
+    font-family: "Cagliostro-Regular";
+    src: url('./fonts/Cagliostro-Regular.ttf')
 }
 
 * {
 	margin: 0;
 	padding: 0;
-	font-family: PrestigeEliteStd, sans-serif;
+	font-family: Cagliostro-Regular, sans-serif;
 }
 
 h1 {
@@ -24,7 +24,7 @@ menu {
 	font-size: 15px;
 	text-align: center;
 	background-color: #8BC3D6;
-	font-family: PrestigeEliteStd, sans-serif;
+	font-family: Cagliostro-Regular, sans-serif;
 }
 
 menu li {
@@ -42,14 +42,14 @@ menu li:hover {
 }
 
 p {
-	font-family: PrestigeEliteStd, sans-serif;
+	font-family: Cagliostro-Regular, sans-serif;
 }
 
 #body {
 	margin: auto;
 	padding: 2em;
 	max-width: 800px;
-	font-family: PrestigeEliteStd;
+	font-family: Cagliostro-Regular;
 }
 
 body{
