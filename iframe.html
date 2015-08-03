@@ -33,6 +33,9 @@
 			<span style="display: inline;"><b><u>Location:</u></b> </span>
 			<span id="location"></span>
 		</div>
+		<br />
+		
+		<div align="center" style="margin-left: 15px; margin-right: 15px;"><img style="height: 300px; float: center;" src="Images/clearspring.jpg"/></div>
 		
 		<!--Interactive google map of addres shown above.-->
 		<br />
@@ -115,7 +118,7 @@
 				
 				//Clean up passed data from URL.
 				for (var i = 0; i < location.length; i++){
-					location = location.replace("_", " ");
+				location = location.replace("_", " ");
 				}
 				
 				//Place data dynamically within the iframe's varioius divs.
@@ -129,41 +132,42 @@
 				//Block of code used for upcoming events. It's used so that a general date will be passed for "When" rather than a specific event date. 
 				//This is primarily useful only for recurring Monday night dances.
 				if (res.length == 7){
-					document.getElementById('date').innerHTML = "<b><u>When:</u></b> Every single Monday."
+				document.getElementById('date').innerHTML = "<b><u>When:</u></b> Every single Monday."
 				}
-			});
-			
-			//Get location from URL and parse it.
-			var urlRead = window.location.href + "";
-			var parseURL = urlRead.split("#"); 
-			var loc = parseURL[5] + "";
-			for (var i = 0; i < loc.length; i++){
+				});
+				
+				//Get location from URL and parse it.
+				var urlRead = window.location.href + "";
+				var parseURL = urlRead.split("#"); 
+				var loc = parseURL[5] + "";
+				for (var i = 0; i < loc.length; i++){
 				loc = loc.replace("_", " ");
-			}
-			
-			//Structure the googlemap to be rendered on the page.
-			var map = new google.maps.Map(document.getElementById('map'), { 
+				}
+				
+				//Structure the googlemap to be rendered on the page.
+				var map = new google.maps.Map(document.getElementById('map'), { 
 				mapTypeId: google.maps.MapTypeId.ROADMAP,
 				zoom: 14
-			});
-			
-			//Define the map and have the map display the passed location data.
-			var geocoder = new google.maps.Geocoder();
-			geocoder.geocode({
+				});
+				
+				//Define the map and have the map display the passed location data.
+				var geocoder = new google.maps.Geocoder();
+				geocoder.geocode({
 				'address': loc
-			}, 
-			function(results, status) {
+				}, 
+				function(results, status) {
 				if(status == google.maps.GeocoderStatus.OK) {
-					new google.maps.Marker({
-						position: results[0].geometry.location,
-						map: map
-					});
-					map.setCenter(results[0].geometry.location);
+				new google.maps.Marker({
+				position: results[0].geometry.location,
+				map: map
+				});
+				map.setCenter(results[0].geometry.location);
 				}
-			});
-		</script> 
-	</body>
-</html>
-
-
-
+				});
+				</script> 
+				</body>
+				</html>
+				
+				
+				
+								
