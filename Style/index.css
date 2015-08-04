@@ -128,13 +128,21 @@ hr {
 }
 
 @media only screen and (orientation: portrait){
-	* {
-	color: red;
+	#contactPortrait {
+		display: inherit;
+	}
+	
+	#contactLandscape {
+		display: none;
 	}
 }
 
 @media only screen and (orientation: landscape){
-	* {
-	color: blue;
+	#contactPortrait {
+		display: none;
+	}
+	
+	#contactLandscape {
+		display: inherit;
 	}
 }
