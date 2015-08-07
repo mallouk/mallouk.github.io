@@ -66,6 +66,7 @@
 				for (var i = 0; i < eventDescription.length; i++){
 					eventDescription = eventDescription.replace("_", "<br />");
 					eventDescription = eventDescription.replace("%20", " ");
+					eventDescription = eventDescription.replace("%22", "'");
 				}
 				
 				//Get the start and end dates of the event, replace the strings, and set them up as date objects.
