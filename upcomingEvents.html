@@ -28,6 +28,7 @@
 				});
 				
 				
+				<!--FancyBox Creation!-->
 				//Fancybox event to perform when an event in the calendar is clicked.
 				//Opens up a coming soon html to let the user know to return later for more info.
 				$(".comingSoonFancyBox").click(function() {
@@ -39,9 +40,9 @@
 				});
 				
 				//Fancybox that opens up actual event data for an event.
-				$(".eventDataFancyBox").click(function() {
+				$(".EVENT_NAME_GOES_HERE").click(function() {
 					$.fancybox.open({
-						href : 'iframe.html#Monday_Night:_Lindy_Hop_Swing_Dance#Check us out at our Northshore studio! Beginner lessons start at 7:45pm. Intermediate at 7pm.__Our venue for the Monday night dances is at Clearspring Yoga on North Market St._NOTE: Please do not wear high heels as they have a laminate floor. Suggested shoes are "keds or converse" with hard rubber/suede soles or any other "non-marking" shoes. Dance shoes or suede or hard leather soled dress shoes are also excellent choices. We want to keep their floor beautiful. :) Join us this Monday night at Clearspring!__There are included lessons beforehand given by Etienne van Wyk and Lindsey Miller and then the music starts playing for open social dancing.__Parking: The studio is right behind the First TN Bank on Frazier Ave. You may park in any spot that is in the building complex of the studio.__Intermediate Lesson: 7:00 pm_Beginner Lesson: 7:45 pm_Dancing: 8:30 pm till 10:00pm__Cover (includes lessons):_$7.00_*$5.00 With Student ID#1435621500000#1435632300000#Clear_Spring_Yoga,_105_North_Market_Street,_Chattanooga,_TN_37405,_United_States#EVERY',
+						href : 'LINK_FROM_CALENDAR_GOES_HERE',
 						type : 'iframe',
 						padding : 5
 					});
@@ -73,18 +74,24 @@
 		
 		<!--Render the various clickable upcoming events-->
 		<div id="body">
-			
 			<p align="center">Click on any of the event images below to see details.</p>
 			<h2>Events!</h2>
 			
+			<!--Monday Night Lindy Hop Event -->
 			<br />
-			<a class="eventDataFancyBox" href="javascript:;"><img class="imgShadows" style="width: 100%;" src="Images/events/eventMondayNight.jpg"></img></a>
+			<a class="eventDataFancyBoxMNLH" href="javascript:;">
+				<img class="imgShadows" style="width: 100%;" src="Images/events/eventMondayNight.jpg"></img>
+			</a>
 			
+			
+			
+			<!-- Event Name Goes Here Comment-->
 			<br /> <br /> <br />
 			<hr align="center" />
 			<br /> <br />
-			<a class="comingSoonFancyBox" href="javascript:;"><img class="imgShadows" style="width: 100%;" src="Images/events/chatta-atta.jpg"></img></a>
-			
+			<a class="comingSoonFancyBox" href="javascript:;">
+				<img class="imgShadows" style="width: 100%;" src="Images/events/FILE_NAME_GOES_HERE.jpg"></img>
+			</a>
 		</div>
 		
 		<br /><br /><br /><br /><br /><br /><br /><br />
