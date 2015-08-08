@@ -35,7 +35,7 @@
 		</div>
 		<br />
 		
-		<div align="center" style="margin-left: 15px; margin-right: 15px;"><img style="height: 300px; float: center;" src="Images/clearspring.jpg"/></div>
+		<div id="threeDPic"align="center" style="margin-left: 15px; margin-right: 15px;"></div>
 		
 		<!--Interactive google map of addres shown above.-->
 		<br />
@@ -67,6 +67,8 @@
 					eventDescription = eventDescription.replace("_", "<br />");
 					eventDescription = eventDescription.replace("%20", " ");
 					eventDescription = eventDescription.replace("%22", "'");
+					eventDescription = eventDescription.replace("%27", "'");
+					
 					eventDescription = eventDescription.replace("%28", "(");
 					eventDescription = eventDescription.replace("%29", ")");
 				}
@@ -132,11 +134,17 @@
 				document.getElementById('time').innerHTML = "<b><u>Time:</u></b> " + startHours + ":" + startMin + " to " + endHours + ":" + endMin;
 				document.getElementById('cmd').href = document.URL;
 				
+				if (eventTitle == "Monday Night: Lindy Hop Swing Dance"){
+					document.getElementByID('threeDPic').innerHTML = "<img style=\"height: 300px; float: center;\" src=\"Images/clearspring.jpg\"/>"
+				}
+				
 				//Block of code used for upcoming events. It's used so that a general date will be passed for "When" rather than a specific event date. 
 				//This is primarily useful only for recurring Monday night dances.
 				if (res.length == 7){
-					document.getElementById('date').innerHTML = "<b><u>When:</u></b> Every single Monday."
+					document.getElementById('date').innerHTML = "<b><u>When:</u></b> Every single Monday.";
 				}
+				
+				
 			});
 			
 			//Get location from URL and parse it.
