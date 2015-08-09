@@ -98,9 +98,9 @@
 						if (event.title == "Monday Night: Lindy Hop Swing Dance") {
 							element.css('background', 'purple');
 							element.css('border-color', 'purple');
-							}else if (event.title == "Event"){
-							element.css('background', 'blue');
-							element.css('border-color', 'blue');
+						}else if (event.title == "West Coast Swing Dance"){
+							element.css('background', 'green');
+							element.css('border-color', 'green');
 						}
 					},
 					
@@ -125,7 +125,7 @@
 							location = location.replace(" ", "_"); 
 						}
 						
-						var hrefLink = 'iframe.html#' + title + "#" + description + "#" + startDate + "#" + endDate + "#" + location;
+						var hrefLink = 'iframe1.html#' + title + "#" + description + "#" + startDate + "#" + endDate + "#" + location;
 						$.fancybox.open({
 							href : hrefLink,
 							type : 'iframe',

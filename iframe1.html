@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>River City Dance Club - Event Pane</title>
+		
+		<!--Meta tags used to tweak look in feel for different types of screen sizes.-->		
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		
+		<!--Imports of scripts and css files to allow for all of the functionally needed.-->
+		<script type="text/javascript" src="Scripts/vendor/jquery-1.7.1.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js"></script>
+		
+	</head>
+	
+	<body>
+		<!--Open new tab link-->
+		<a id="cmd" style="float: right;" target="_blank">open in new tab</a>
+		
+		<!--Title of event link-->
+		<h1 id="title"></h1>
+		
+		<!--Description of event-->
+		<p id="description"></p>
+		
+		<!--Date of event-->
+		<p id="date"></p>
+		
+		<!--Time of event-->
+		<p id="time"></p>
+		
+		<!--Location (address) of event-->
+		<div id="locationDiv">
+			<span style="display: inline;"><b><u>Location:</u></b> </span>
+			<span id="location"></span>
+		</div>
+		<br />
+		
+		<div id="threeDPic"align="center" style="margin-left: 15px; margin-right: 15px;"></div>
+		
+		<!--Interactive google map of addres shown above.-->
+		<br />
+		<div id="map" style="width: inherit; height: 300px;margin-left: 15px; margin-right: 15px "></div> 
+		
+		<!--Close fancybox link-->
+		<br />
+		<br />
+		<p>
+			<a href="javascript:parent.jQuery.fancybox.close();" style="color: red">close window</a>
+		</p>
+		
+		
+		<script>
+			$(document).ready(function(){
+				//Obtain data passed in from the event.
+				var data = window.location.href + "";
+				var res = data.split("#"); 
+				
+				//Obtain eventTitle and replace underscores keys with spaces to re-establish our original string.
+				var eventTitle = res[1];
+				for (var i = 0; i < eventTitle.length; i++){
+					eventTitle = eventTitle.replace("_", " ");
+				}
+				
+				//Obtain description and replace underscores keys with spaces to re-establish our original string.
+				var eventDescription = res[2] + "";
+				for (var i = 0; i < eventDescription.length; i++){
+					eventDescription = eventDescription.replace("_", "<br />");
+					eventDescription = eventDescription.replace("%20", " ");
+					eventDescription = eventDescription.replace("%22", "'");
+					eventDescription = eventDescription.replace("%27", "'");
+					
+					eventDescription = eventDescription.replace("%28", "(");
+					eventDescription = eventDescription.replace("%29", ")");
+				}
+				
+				//Get the start and end dates of the event, replace the strings, and set them up as date objects.
+				var startDate = new Date(parseInt(res[3].replace("_", " ")));
+				var endDate = new Date(parseInt(res[4].replace("_", " ")));
+				
+				//Format time frames to include AM/PM as well as account for military time.
+				var startHours = startDate.getHours();
+				var startMin = startDate.getMinutes();
+				if (startHours > 12){
+					startHours-=12;
+					startMin = startMin + " PM";
+					}else if (startHours == 0){
+					startHours = 12;
+					startMin = startMin + "AM";
+					}else{
+					startMin = startMin + "AM";
+				}
+				
+				//Add zero in front of minute form in case we're less than 10 min.
+				if (parseInt(startMin) < 10){
+					startMin = "0" + startMin;
+				}
+				
+				//Format time frames to include AM/PM as well as account for military time.
+				var endHours = endDate.getHours();
+				var endMin = endDate.getMinutes();
+				if (endHours > 12){
+					endHours-=12;
+					endMin = endMin + " PM";
+				}else if (endHours == 0){
+					endHours = 12;
+					endMin = endMin + "AM";
+				}else{
+					endMin = endMin + "AM";
+				}
+				
+				//Add zero in front of minute form in case we're less than 10 min.
+				if (parseInt(endMin) < 10){
+					endMin = "0" + endMin;
+				}
+				
+				//Obtain and format month/day/year of event.
+				var startMonth = startDate.getUTCMonth() + 1;
+				var startDay = startDate.getDate();
+				var endDay = endDate.getUTCDate();
+				var startYear = startDate.getFullYear();
+				
+				//Get location of event
+				var location = res[5] + "";
+				
+				//Clean up passed data from URL.
+				for (var i = 0; i < location.length; i++){
+					location = location.replace("_", " ");
+				}
+				
+				//Place data dynamically within the iframe's varioius divs.
+				document.getElementById('title').innerHTML = eventTitle;
+				document.getElementById('description').innerHTML = "<b><u>Description:</u></b> " + eventDescription;
+				document.getElementById('date').innerHTML = "<b><u>When:</u></b> " + startMonth + "/" + startDay + "/" + startYear;
+				document.getElementById('location').innerHTML = "<a href=\"http://maps.google.com/maps?q="+location+"\" target=\"_blank\" >" + location + "</a>";
+				document.getElementById('time').innerHTML = "<b><u>Time:</u></b> " + startHours + ":" + startMin + " to " + endHours + ":" + endMin;
+				document.getElementById('cmd').href = document.URL;
+				
+				if (eventTitle == "Monday Night: Lindy Hop Swing Dance"){
+					document.getElementByID('threeDPic').innerHTML = "<img style=\"height: 300px; float: center;\" src=\"Images/clearspring.jpg\"/>"
+				}
+				
+				//Block of code used for upcoming events. It's used so that a general date will be passed for "When" rather than a specific event date. 
+				//This is primarily useful only for recurring Monday night dances.
+				if (res.length == 7){
+					document.getElementById('date').innerHTML = "<b><u>When:</u></b> Every single Monday.";
+				}
+				
+				
+			});
+			
+			//Get location from URL and parse it.
+			var urlRead = window.location.href + "";
+			var parseURL = urlRead.split("#"); 
+			var loc = parseURL[5] + "";
+			for (var i = 0; i < loc.length; i++){
+				loc = loc.replace("_", " ");
+			}
+			
+			//Structure the googlemap to be rendered on the page.
+			var map = new google.maps.Map(document.getElementById('map'), { 
+				mapTypeId: google.maps.MapTypeId.ROADMAP,
+				zoom: 14
+			});
+			
+			//Define the map and have the map display the passed location data.
+			var geocoder = new google.maps.Geocoder();
+			geocoder.geocode({
+				'address': loc
+			}, 
+			function(results, status) {
+				if(status == google.maps.GeocoderStatus.OK) {
+					new google.maps.Marker({
+						position: results[0].geometry.location,
+						map: map
+					});
+					map.setCenter(results[0].geometry.location);
+				}
+			});
+		</script> 
+	</body>
+</html>
+
+
+
