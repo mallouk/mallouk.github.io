@@ -35,7 +35,6 @@
 		</div>
 		<br />
 		
-		<div id="threeDPic"align="center" style="margin-left: 15px; margin-right: 15px;"></div>
 		
 		<!--Interactive google map of addres shown above.-->
 		<br />
@@ -115,7 +114,8 @@
 				
 				//Obtain and format month/day/year of event.
 				var startMonth = startDate.getUTCMonth() + 1;
-				var startDay = startDate.getUTCDate();
+				var startDay = startDate.getDate();
+				var endDay = endDate.getUTCDate();
 				var startYear = startDate.getFullYear();
 				
 				//Get location of event
@@ -130,12 +130,12 @@
 				document.getElementById('title').innerHTML = eventTitle;
 				document.getElementById('description').innerHTML = "<b><u>Description:</u></b> " + eventDescription;
 				document.getElementById('date').innerHTML = "<b><u>When:</u></b> " + startMonth + "/" + startDay + "/" + startYear;
-				document.getElementById('location').innerHTML = "<a href=\"http://maps.google.com/maps?q="+location+"\" target=\"_blank\" >" + location + "</a>";
 				document.getElementById('time').innerHTML = "<b><u>Time:</u></b> " + startHours + ":" + startMin + " to " + endHours + ":" + endMin;
 				document.getElementById('cmd').href = document.URL;
 				
+				
 				if (eventTitle == "Monday Night: Lindy Hop Swing Dance"){
-					document.getElementByID('threeDPic').innerHTML = "<img style=\"height: 300px; float: center;\" src=\"Images/clearspring.jpg\"/>"
+					document.getElementById('location').innerHTML = "<a href=\"http://maps.google.com/maps?q="+location+"\" target=\"_blank\" >" + location + "</a> <br /> <br /> <div align=\"center\" style=\"margin-left: 15px; margin-right: 15px;\"><img style=\"height: 300px; float: center;\" src=\"Images/clearspring.jpg\"/></div>";
 				}
 				
 				//Block of code used for upcoming events. It's used so that a general date will be passed for "When" rather than a specific event date. 
@@ -178,6 +178,3 @@
 		</script> 
 	</body>
 </html>
-
-
-
