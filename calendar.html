@@ -97,6 +97,9 @@
 						}else if (event.title == "West Coast Swing Dance"){
 							element.css('background', 'green');
 							element.css('border-color', 'greeb');
+						}else if (event.title == "Monday Night: Vintage Swing & Blues Dance") {
+							element.css('background', 'purple');
+							element.css('border-color', 'purple');
 						}
 					},
 					
@@ -121,7 +124,7 @@
 							location = location.replace(" ", "_"); 
 						}
 						
-						var hrefLink = 'iframe.html#' + title + "#" + description + "#" + startDate + "#" + endDate + "#" + location;
+						var hrefLink = 'iframe2.html#' + title + "#" + description + "#" + startDate + "#" + endDate + "#" + location;
 						$.fancybox.open({
 							href : hrefLink,
 							type : 'iframe',
