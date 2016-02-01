@@ -95,12 +95,13 @@
 					//We only really use this event call to apply different colors to events
 					//based upon the type of event they are or if they're special.
 					eventRender: function( event, element, view ) { 
-						if (event.title == "Monday Night: Lindy Hop Swing Dance") {
+						if (event.title == "Monday Night: Lindy Hop Swing Dance" || event.title == "Monday Vintage Swing & Blues Dance" ||
+							event.title == "Monday Night: Vintage Swing & Blues Dance") {
 							element.css('background', 'purple');
 							element.css('border-color', 'purple');
-						}else if (event.title == "Monday Night: Vintage Swing & Blues Dance") {
-							element.css('background', 'purple');
-							element.css('border-color', 'purple');
+						}else if (event.title == "Live Monday Featuring The 9th Street Stompers") {
+							element.css('background', 'blue');
+							element.css('border-color', 'blue');
 						}else{
 							element.css('background', 'green');
 							element.css('border-color', 'green');
