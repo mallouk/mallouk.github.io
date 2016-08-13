@@ -109,51 +109,44 @@ hr {
 
 
 
-
-
-@media screen and (max-width: 689px){ /* Want Mobile site*/
-	#footer {
-		display: block;
-		font-size: 15px;
-		text-align: center;
-		background-color: #8BC3D6;
-		font-family: Times New Roman,sans-serif;
-		padding: 1.5em;
-		color: white;
-	}
-	
-	#footer li {
-		display: inline-block;
-		width: 150px;
-	}
-	
-	#footer a  span{
-		color: inherit;
-		text-decoration: none;
-		font-family: Times New Roman,sans-serif;;
-		
-	}
+#footerMobile {
+display: block;
+font-size: 15px;
+text-align: center;
+background-color: #8BC3D6;
+font-family: Times New Roman,sans-serif;
+padding: 1.5em;
+color: white;
 }
 
+#footerMobile li {
+display: inline-block;
+width: 150px;
+}
 
+#footerMobile a  span{
+color: inherit;
+text-decoration: none;
+font-family: Times New Roman,sans-serif;;
 
+}
 
 @media only screen and (orientation: portrait){
-	#contactPortrait {
-		display: inherit;
-	}
-	
-	#contactLandscape {
-		display: none;
-	}
+#contactPortrait {
+display: inherit;
+}
+
+#contactLandscape {
+display: none;
+}
 }
 
 @media only screen and (orientation: landscape){
-	#contactPortrait {
-		display: none;
-	}
-	
-	#contactLandscape {
-		display: inherit;
-	}
+#contactPortrait {
+display: none;
+}
+
+#contactLandscape {
+display: inherit;
+}
 }
