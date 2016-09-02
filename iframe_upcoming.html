@@ -75,17 +75,20 @@
 				//Get the start and end dates of the event, replace the strings, and set them up as date objects.
 				var startDate = new Date(parseInt(res[3].replace("_", " ")));
 				var endDate = new Date(parseInt(res[4].replace("_", " ")));
+				var nextMondayDate = new Date();
+				nextMondayDate.setDate(nextMondayDate.getDate() + (1 + 7 - nextMondayDate.getDay()) % 7);
+				
 				
 				//Format time frames to include AM/PM as well as account for military time.
-				var startHours = startDate.getHours();
-				var startMin = startDate.getMinutes();
+				var startHours = nextMondayDate.getHours();
+				var startMin = nextMondayDate.getMinutes();
 				if (startHours > 12){
 					startHours-=12;
 					startMin = startMin + " PM";
-					}else if (startHours == 0){
+				}else if (startHours == 0){
 					startHours = 12;
 					startMin = startMin + "AM";
-					}else{
+				}else{
 					startMin = startMin + "AM";
 				}
 				
@@ -113,10 +116,10 @@
 				}
 				
 				//Obtain and format month/day/year of event.
-				var startMonth = startDate.getUTCMonth() + 1;
-				var startDay = startDate.getDate();
+				var startMonth = nextMondayDate.getUTCMonth() + 1;
+				var startDay = nextMondayDate.getDate();
 				var endDay = endDate.getUTCDate();
-				var startYear = startDate.getFullYear();
+				var startYear = nextMondayDate.getFullYear();
 				
 				//Get location of event
 				var location = res[5] + "";
