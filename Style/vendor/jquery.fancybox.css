@@ -75,7 +75,7 @@
 	max-height: 100%;
 }
 
-.fancybox-close, .fancybox-prev span, .fancybox-next span {
+#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
 	background-image: url('fancybox_sprite.png');
 }
 
@@ -92,9 +92,9 @@
 }
 
 #fancybox-loading div {
-	width: 128px;
-	height: 128px;
-	background: url('loading_fancybox.gif') center center;
+	width: 44px;
+	height: 44px;
+	background: url('fancybox_loading.gif') center center no-repeat;
 }
 
 .fancybox-close {
