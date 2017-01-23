@@ -20,6 +20,7 @@
 		<script src="Scripts/vendor/jquery-ui.js" type="text/javascript"></script>
 		<script src="Scripts/vendor/fullcalendar.js" type="text/javascript"></script>
 		<script src="Scripts/vendor/gcal.js" type="text/javascript"></script>
+		<script src="Scripts/load_html.js" type="text/javascript"></script>
 		
 		<link href="Style/vendor/jquery.fancybox-thumbs.css?v=1.0.7" rel="stylesheet" type="text/css"/>
 		<link href="Style/vendor/jquery.fancybox-buttons.css?v=1.0.5" rel="stylesheet" type="text/css"/>
@@ -94,16 +95,16 @@
 						if (event.title.includes("West")) {
 							element.css('background', 'purple');
 							element.css('border-color', 'purple');
-						}else if (event.title.includes("LIVE")) {
+							}else if (event.title.includes("LIVE")) {
 							element.css('background', 'blue');
 							element.css('border-color', 'blue');
-						}else if (event.title.includes("Closed")) {
+							}else if (event.title.includes("Closed")) {
 							element.css('background', 'red');
 							element.css('border-color', 'red');
-						}else if (event.title.includes("Progressive")) {
+							}else if (event.title.includes("Progressive")) {
 							element.css('background', 'orange');
 							element.css('border-color', 'orange');
-						}else{
+							}else{
 							element.css('background', 'green');
 							element.css('border-color', 'green');
 						}
@@ -151,23 +152,8 @@
 	
 	<body>
 		<!--Banner definition block-->
-		<div id="banner">
-			<h1>
-				<a href="index.html">
-					<img src="Images/riverCityDanceBanner.jpg" alt="Chattanooga Swing Dancing"/>
-				</a>
-			</h1>
-			<menu>
-				<ul>
-					<a href="index.html"><li>Home</li></a>
-					<a href="upcomingEvents.html"><li>Upcoming Events</li></a>
-					<a href="calendar.html"><li>Calendar</li></a>
-					<a href="gallery.html"><li>Gallery</li></a>
-					<a href="about.html"><li>About Us</li></a>
-					<a href="contact.html"><li>Contact Us</li></a>
-				</ul>
-			</menu>
-		</div>
+		<div w3-include-html="header.html"></div> 
+		
 		
 		<div id="body">
 			<p align="center"><b>Click on any of the events in the calendar below to see details.</b></p>
@@ -225,7 +211,16 @@
 			
 			ga('create', 'UA-82135030-1', 'auto');
 			ga('send', 'pageview');
-			
+			w3IncludeHTML();
 		</script>
+		
+		<script type="text/javascript">
+			if (screen.width > 699){
+				document.getElementById("footerMobile").style.display = "none";
+			}else{
+				document.getElementById("footerDesk").style.display = "none";
+			}
+		</script>
+		
 	</body>
 </html>		
