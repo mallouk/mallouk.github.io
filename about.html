@@ -6,7 +6,7 @@
 		<!--Meta tags used to tweak look in feel for different types of screen sizes.-->
 		<meta charset="utf-8"/>
 		<meta http-equiv="content-type" content="text/html">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1" id="diamond">
 		<meta name="River City Dance Club About Us Swing dancing culture" content="River City Dance Club brings swing dance culture to Chattanooga. This includes Lindy Hop, Blues dancing, Charleston, Balboa, West Coast Swing ">
 		
 		<!--Imports of scripts and css files to allow for all of the functionally needed.-->		
@@ -46,7 +46,9 @@
 		</div>
 		
 		<br /> <br /> <br />
-		
+
+		<div id="hellothere">
+		</div>
 		<div w3-include-html="footer.html" id="footerDesk"></div>
 		<div w3-include-html="footer_mobile.html" id="footerMobile"></div>
 		
@@ -63,6 +65,14 @@
 		</script>
 		
 		<script type="text/javascript">
+			var divTest = document.getElementById("hellothere");
+			alert(divTest);
+			var textnode = document.createTextNode("Water"); 
+			
+			divTest.appendChild(textnode);
+			
+			
+		//divTest.innerhtml = divTest.innerhtml + "<body> <li> heofwo </li></body>";
 			if (screen.width > 699){
 				document.getElementById("footerMobile").style.display = "none";
 				}else{
