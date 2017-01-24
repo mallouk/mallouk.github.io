@@ -82,11 +82,13 @@
 				var userAgent = navigator.userAgent;
 				if (userAgent.includes("Mobile")) {
 					userAgent.replace("Mobile", "");
-					alert(userAgent);
+					
 					navigator.__defineGetter__('userAgent', function(){
+						alert(userAgent + " fowefowe");
 						return userAgent;
 					});
 					alert(navigator.userAgent);
+					
 				}
 			}
 		</script>
