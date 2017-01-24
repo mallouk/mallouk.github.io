@@ -45,6 +45,12 @@
 			</div>
 		</div>
 		
+		<div id="body">
+			<p align="center"><a onclick="funcTest();">View the desktop site</a> </p>
+		</div>
+		
+		
+		<br /> <br /> <br />
 		<br /> <br /> <br />
 		
 		<div w3-include-html="footer.html" id="footerDesk"></div>
@@ -67,8 +73,20 @@
 			
 			if (userAgent.includes("Mobile")){
 				document.getElementById("footerDesk").style.display = "none";
-			}else{
+				}else{
 				document.getElementById("footerMobile").style.display = "none";
+			}
+			
+			
+			function funcTest(){
+				var userAgent = navigator.userAgent;
+				if (userAgent.includes("Mobile")) {
+					userAgent.replace("Mobile", "");
+					alert(userAgent);
+					navigator.__defineGetter__('userAgent', function(){
+						return userAgent;
+					});
+				}
 			}
 		</script>
 	</body>
