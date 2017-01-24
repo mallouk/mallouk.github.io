@@ -70,11 +70,11 @@
 			//var textnode = document.createTextNode("<html><li>Water</li></html>"); 
 			alert(navigator.userAgent );
 			//divTest.appendChild(textnode);
-			divTest.innerhtml = "<b>okay then...</bv>"
+			var userAgent = navigator.userAgent
 			
-			if (screen.width > 699){
+			if (userAgent.includes("Mobile")){
 				document.getElementById("footerMobile").style.display = "none";
-				}else{
+			}else{
 				document.getElementById("footerDesk").style.display = "none";
 			}
 		</script>
