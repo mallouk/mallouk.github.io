@@ -51,17 +51,6 @@
 		
 		<div w3-include-html="footer.html" id="footerDesk"></div>
 		<div w3-include-html="footer_mobile.html" id="footerMobile"></div>
-	
-		<script type="text/javascript">
-			w3IncludeHTML();
-			var userAgent = navigator.userAgent
-			
-			if (userAgent.includes("Mobile")){
-				document.getElementById("footerDesk").style.display = "none";
-				}else{
-				document.getElementById("footerMobile").style.display = "none";
-			}
-		</script>
 		
 		<script type="text/javascript">
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -71,6 +60,17 @@
 			
 			ga('create', 'UA-82135030-1', 'auto');
 			ga('send', 'pageview');
+			w3IncludeHTML();			
+		</script>
+		
+		<script type="text/javascript">
+			var userAgent = navigator.userAgent
+			
+			if (userAgent.includes("Mobile")){
+				document.getElementById("footerDesk").style.display = "none";
+				}else{
+				document.getElementById("footerMobile").style.display = "none";
+			}
 		</script>
 	</body>
 </html>																																																																										
