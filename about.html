@@ -46,7 +46,7 @@
 		</div>
 		
 		<br /> <br /> <br />
-
+		
 		<div id="hellothere">
 		</div>
 		<div w3-include-html="footer.html" id="footerDesk"></div>
@@ -66,13 +66,14 @@
 		
 		<script type="text/javascript">
 			var divTest = document.getElementById("hellothere");
-			alert(divTest);
-			var textnode = document.createTextNode("Water"); 
+			//alert(divTest);
+			//var textnode = document.createTextNode("<html><li>Water</li></html>"); 
+			alert(document.getElementById("diamond") );
+			alert(document.getElementById("diamond").content );
 			
-			divTest.appendChild(textnode);
+			//divTest.appendChild(textnode);
+			divTest.innerhtml = "<b>okay then...</bv>"
 			
-			
-		//divTest.innerhtml = divTest.innerhtml + "<body> <li> heofwo </li></body>";
 			if (screen.width > 699){
 				document.getElementById("footerMobile").style.display = "none";
 				}else{
